@@ -11,7 +11,7 @@ const products = [
 
         status: "Cena: NEAKTIVNÍ",
 
-        image: "assets/images/200-vbucks.png",
+        image: "assets/images/200-Vbucks.png",
 
         code: "!shop buy 200vbucks"
     },
@@ -37,7 +37,7 @@ const products = [
 
         status: "Cena: 1000 Granulek",
 
-        image: "assets/images/challenge.png",
+        image: "assets/images/Challenge.png",
 
         code: "!shop buy challenge"
     },
