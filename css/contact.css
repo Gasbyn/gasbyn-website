@@ -126,6 +126,8 @@
 .contact-option:hover {
     transform: translateY(-3px);
 
+transform: scale(1.08);
+    
     background: #252525;
 
     border-color: rgba(255, 140, 0, 0.4);
