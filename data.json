@@ -1,0 +1,15 @@
+{
+  "youtube": {
+    "subscribers": 2000,
+    "latestVideo": {
+      "id": "",
+      "title": "",
+      "thumbnail": ""
+    },
+    "updatedAt": ""
+  },
+  "kick": {
+    "followers": 700,
+    "updatedAt": ""
+  }
+}
