@@ -3,11 +3,10 @@
 :root {
   --hover-ease: cubic-bezier(.22, 1, .36, 1);
   --hover-dur: 0.9s;
-  /* ~15% faster for shop / commands */
   --hover-dur-fast: 0.75s;
 }
 
-/* HOME cards (stats, youtube, kick) – jemný náklon */
+/* HOME cards – jemný náklon zůstává */
 .card,
 .youtube-card,
 .kick-card {
@@ -30,19 +29,18 @@
   filter: brightness(1.04);
 }
 
-/* COMMANDS + SHOP – menší náklon (~5°) a rychlejší animace */
+/* COMMANDS + SHOP – BEZ náklonu, jen scale + lift */
 .command-card,
 .product-card,
 .stat,
 .secret-card {
-  transform: perspective(1000px) rotateY(-5deg) rotateZ(-0.5deg) scale(1);
+  transform: none;
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
     box-shadow var(--hover-dur-fast) ease,
     border-color 0.55s ease,
     background 0.55s ease,
     filter var(--hover-dur-fast) ease !important;
-  transform-style: preserve-3d;
   position: relative;
   overflow: hidden;
 }
@@ -51,11 +49,10 @@
 .product-card:hover,
 .stat:hover,
 .secret-card:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateZ(0deg) scale(1.05) translateY(-6px) !important;
+  transform: scale(1.04) translateY(-6px) !important;
   filter: brightness(1.04);
 }
 
-/* COMMANDS / SHOP buttons – rychlejší o ~15 % */
 .copy,
 .favorite,
 .copy-product,
@@ -79,33 +76,31 @@
   transform: translateY(-4px) scale(1.07) !important;
 }
 
-/* CONTACT – náklon + hover (přepisuje contact.css) */
+/* CONTACT – BEZ náklonu */
 .contact-card {
-  transform: perspective(1000px) rotateY(-5deg) rotateZ(-0.5deg) scale(1);
+  transform: none;
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
     box-shadow var(--hover-dur-fast) ease !important;
-  transform-style: preserve-3d;
 }
 
 .contact-card:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateZ(0deg) scale(1.03) translateY(-6px) !important;
+  transform: scale(1.03) translateY(-6px) !important;
 }
 
 .contact-option {
   display: flex;
-  transform: perspective(900px) rotateY(-5deg) rotateZ(-0.5deg) scale(1) !important;
+  transform: none !important;
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
     box-shadow var(--hover-dur-fast) ease,
     background 0.55s ease,
     border-color 0.55s ease !important;
-  transform-style: preserve-3d;
   will-change: transform;
 }
 
 .contact-option:hover {
-  transform: perspective(900px) rotateY(0deg) rotateZ(0deg) scale(1.05) translateY(-5px) !important;
+  transform: scale(1.04) translateY(-5px) !important;
   background: #252525 !important;
   border-color: rgba(255, 140, 0, 0.4) !important;
   box-shadow: 0 14px 32px rgba(255, 140, 0, 0.18);
@@ -116,24 +111,23 @@
   transition-duration: 0.12s !important;
 }
 
-/* MERCH – náklon + hover */
+/* MERCH – BEZ náklonu */
 .merch-hero {
-  transform: perspective(1000px) rotateY(-5deg) rotateZ(-0.5deg) scale(1);
+  transform: none;
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
     box-shadow var(--hover-dur-fast) ease,
     border-color 0.55s ease !important;
-  transform-style: preserve-3d;
   cursor: default;
 }
 
 .merch-hero:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateZ(0deg) scale(1.04) translateY(-6px) !important;
+  transform: scale(1.03) translateY(-6px) !important;
   box-shadow: 0 24px 55px rgba(255, 140, 0, 0.2) !important;
   border-color: rgba(255, 140, 0, 0.35) !important;
 }
 
-/* HOME / global buttons – pomalejší (původní tempo) */
+/* HOME / global buttons */
 .hero-buttons a,
 .contact-button,
 .youtube-card a,
@@ -172,7 +166,6 @@
   letter-spacing: 0.4px;
 }
 
-/* Active press */
 .hero-buttons a:active,
 .contact-button:active,
 .youtube-card a:active,
@@ -265,7 +258,6 @@
   box-shadow: 0 0 16px rgba(255, 140, 0, 0.5);
 }
 
-/* Button shine */
 .hero-buttons a,
 .contact-button,
 .youtube-card a,
