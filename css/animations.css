@@ -1,20 +1,16 @@
-/* ===== UNIFIED SKILLET-STYLE HOVER (tilt → straighten + scale) ===== */
+/* ===== UNIFIED SKILLET-STYLE HOVER ===== */
 
 :root {
   --hover-ease: cubic-bezier(.22, 1, .36, 1);
   --hover-dur: 0.9s;
+  /* ~15% faster for shop / commands */
+  --hover-dur-fast: 0.75s;
 }
 
-/* CARDS: slight tilt at rest, straighten + grow on hover */
+/* HOME cards (stats, youtube, kick) – jemný náklon */
 .card,
 .youtube-card,
-.kick-card,
-.command-card,
-.product-card,
-.stat,
-.contact-option,
-.merch-hero,
-.contact-card {
+.kick-card {
   transform: perspective(900px) rotateY(-6deg) rotateZ(-1deg) scale(1);
   transition:
     transform var(--hover-dur) var(--hover-ease),
@@ -23,34 +19,125 @@
     background 0.7s ease,
     filter var(--hover-dur) ease !important;
   transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover,
 .youtube-card:hover,
-.kick-card:hover,
-.command-card:hover,
-.product-card:hover,
-.stat:hover,
-.contact-option:hover {
+.kick-card:hover {
   transform: perspective(900px) rotateY(0deg) rotateZ(0deg) scale(1.06) translateY(-8px) !important;
   filter: brightness(1.04);
 }
 
-.secret-card:hover {
-  transform: perspective(900px) rotateY(0deg) rotateZ(0deg) scale(1.06) translateY(-8px) !important;
+/* COMMANDS + SHOP – menší náklon (~5°) a rychlejší animace */
+.command-card,
+.product-card,
+.stat,
+.secret-card {
+  transform: perspective(1000px) rotateY(-5deg) rotateZ(-0.5deg) scale(1);
+  transition:
+    transform var(--hover-dur-fast) var(--hover-ease),
+    box-shadow var(--hover-dur-fast) ease,
+    border-color 0.55s ease,
+    background 0.55s ease,
+    filter var(--hover-dur-fast) ease !important;
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
 }
 
-/* BUTTONS / LINKS: same slow scale + lift */
-.hero-buttons a,
-.contact-button,
-.youtube-card a,
-.kick-card a,
+.command-card:hover,
+.product-card:hover,
+.stat:hover,
+.secret-card:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateZ(0deg) scale(1.05) translateY(-6px) !important;
+  filter: brightness(1.04);
+}
+
+/* COMMANDS / SHOP buttons – rychlejší o ~15 % */
 .copy,
 .favorite,
 .copy-product,
 .category,
 .buttons button,
-.tag,
+.tag {
+  transition:
+    transform var(--hover-dur-fast) var(--hover-ease),
+    box-shadow var(--hover-dur-fast) ease,
+    background 0.55s ease,
+    color 0.5s ease,
+    filter var(--hover-dur-fast) ease !important;
+}
+
+.copy:hover,
+.favorite:hover,
+.copy-product:hover,
+.category:hover,
+.buttons button:hover,
+.tag:hover {
+  transform: translateY(-4px) scale(1.07) !important;
+}
+
+/* CONTACT – náklon + hover (přepisuje contact.css) */
+.contact-card {
+  transform: perspective(1000px) rotateY(-5deg) rotateZ(-0.5deg) scale(1);
+  transition:
+    transform var(--hover-dur-fast) var(--hover-ease),
+    box-shadow var(--hover-dur-fast) ease !important;
+  transform-style: preserve-3d;
+}
+
+.contact-card:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateZ(0deg) scale(1.03) translateY(-6px) !important;
+}
+
+.contact-option {
+  display: flex;
+  transform: perspective(900px) rotateY(-5deg) rotateZ(-0.5deg) scale(1) !important;
+  transition:
+    transform var(--hover-dur-fast) var(--hover-ease),
+    box-shadow var(--hover-dur-fast) ease,
+    background 0.55s ease,
+    border-color 0.55s ease !important;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.contact-option:hover {
+  transform: perspective(900px) rotateY(0deg) rotateZ(0deg) scale(1.05) translateY(-5px) !important;
+  background: #252525 !important;
+  border-color: rgba(255, 140, 0, 0.4) !important;
+  box-shadow: 0 14px 32px rgba(255, 140, 0, 0.18);
+}
+
+.contact-option:active {
+  transform: scale(0.97) !important;
+  transition-duration: 0.12s !important;
+}
+
+/* MERCH – náklon + hover */
+.merch-hero {
+  transform: perspective(1000px) rotateY(-5deg) rotateZ(-0.5deg) scale(1);
+  transition:
+    transform var(--hover-dur-fast) var(--hover-ease),
+    box-shadow var(--hover-dur-fast) ease,
+    border-color 0.55s ease !important;
+  transform-style: preserve-3d;
+  cursor: default;
+}
+
+.merch-hero:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateZ(0deg) scale(1.04) translateY(-6px) !important;
+  box-shadow: 0 24px 55px rgba(255, 140, 0, 0.2) !important;
+  border-color: rgba(255, 140, 0, 0.35) !important;
+}
+
+/* HOME / global buttons – pomalejší (původní tempo) */
+.hero-buttons a,
+.contact-button,
+.youtube-card a,
+.kick-card a,
 .logo {
   transition:
     transform var(--hover-dur) var(--hover-ease),
@@ -64,13 +151,7 @@
 .hero-buttons a:hover,
 .contact-button:hover,
 .youtube-card a:hover,
-.kick-card a:hover,
-.copy:hover,
-.favorite:hover,
-.copy-product:hover,
-.category:hover,
-.buttons button:hover,
-.tag:hover {
+.kick-card a:hover {
   transform: translateY(-4px) scale(1.08) !important;
 }
 
@@ -91,7 +172,7 @@
   letter-spacing: 0.4px;
 }
 
-/* Active press - quick snap */
+/* Active press */
 .hero-buttons a:active,
 .contact-button:active,
 .youtube-card a:active,
@@ -108,16 +189,7 @@
   transition-duration: 0.12s !important;
 }
 
-/* ===== SHINE / GLOW DETAILS ===== */
-
-.card,
-.youtube-card,
-.kick-card,
-.command-card,
-.product-card {
-  position: relative;
-  overflow: hidden;
-}
+/* ===== SHINE / GLOW ===== */
 
 .card::after,
 .youtube-card::after,
@@ -176,7 +248,7 @@
 }
 
 .command-card::before {
-  transition: height 0.7s ease, box-shadow 0.7s ease;
+  transition: height 0.55s ease, box-shadow 0.55s ease;
 }
 
 .command-card:hover::before {
@@ -185,7 +257,7 @@
 }
 
 .product-card::before {
-  transition: height 0.7s ease, box-shadow 0.7s ease;
+  transition: height 0.55s ease, box-shadow 0.55s ease;
 }
 
 .product-card:hover::before {
@@ -193,7 +265,7 @@
   box-shadow: 0 0 16px rgba(255, 140, 0, 0.5);
 }
 
-/* Button shine sweep */
+/* Button shine */
 .hero-buttons a,
 .contact-button,
 .youtube-card a,
@@ -239,7 +311,6 @@
   left: 130%;
 }
 
-/* Live pulse */
 .live-update {
   animation: livePulse 2.8s ease-in-out infinite;
 }
@@ -249,7 +320,6 @@
   50% { opacity: 0.55; }
 }
 
-/* Section title underline */
 .about h2,
 .youtube h2,
 .kick h2 {
@@ -279,7 +349,6 @@
   width: 56%;
 }
 
-/* Avatar keeps its own strong tilt */
 .hero-avatar,
 .hero-right img {
   transition:
@@ -321,7 +390,7 @@
 }
 
 .product-image img {
-  transition: transform 1s var(--hover-ease), filter 0.8s ease !important;
+  transition: transform 0.75s var(--hover-ease), filter 0.65s ease !important;
 }
 
 .product-card:hover .product-image img {
@@ -336,7 +405,7 @@ button:focus-visible {
 }
 
 #toast.show {
-  animation: toastPop 0.9s var(--hover-ease);
+  animation: toastPop 0.75s var(--hover-ease);
 }
 
 @keyframes toastPop {
@@ -346,7 +415,7 @@ button:focus-visible {
 }
 
 #shopToast.show {
-  animation: shopToastPop 0.9s var(--hover-ease);
+  animation: shopToastPop 0.75s var(--hover-ease);
 }
 
 @keyframes shopToastPop {
@@ -357,9 +426,4 @@ button:focus-visible {
 
 .category:hover {
   box-shadow: 0 8px 22px rgba(83, 252, 24, 0.25);
-}
-
-/* Contact options - already in unified block */
-.contact-option {
-  will-change: transform;
 }
