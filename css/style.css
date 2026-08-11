@@ -21,14 +21,14 @@ body { margin:0; font-family:"Poppins",sans-serif; background:radial-gradient(ci
 .nav-links a { color:var(--white); text-decoration:none; font-size:18px; }
 .nav-links a:hover{ color:var(--orange); }
 .contact-button { background:var(--orange); color:var(--white); text-decoration:none; padding:10px 18px; border-radius:10px; }
-.contact-button:hover{ transform:translateY(-3px); }
+.contact-button:hover{ transform:translateY(-3px); transform: scale(1.08); }
 main { text-align:center; margin-top:120px; }
 .hero { min-height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; }
 .hero h1 { font-size:90px; color:var(--orange); margin:0; }
 .hero p { font-size:28px; color:var(--gray); margin-top:20px; }
 .hero-buttons { margin-top:45px; display:flex; gap:20px; flex-wrap:wrap; }
 .hero-buttons a { text-decoration:none; font-weight:600; color:var(--white); background:var(--orange); padding:18px 40px; border-radius:12px; font-size:20px; box-shadow:var(--shadow); }
-.hero-buttons a:hover{ transform:translateY(-4px) scale(1.05); box-shadow:0 15px 35px rgba(255,138,0,.35); }
+.hero-buttons a:hover{ transform:translateY(-4px) scale(1.05); box-shadow:0 15px 35px rgba(255,138,0,.35); transform: scale(1.08); }
 .container{ width:min(1200px,92%); margin:auto; }
 .hero-content{ display:flex; justify-content:space-between; align-items:center; gap:60px; }
 .hero-left{ flex:1; }
@@ -44,7 +44,7 @@ main { text-align:center; margin-top:120px; }
 .stats{ margin-top:51px; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
 .card{ background:linear-gradient(180deg,#232323,#1b1b1b); padding:35px; width:260px; border-radius:22px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.05); overflow:hidden; position:relative; }
 .card::before{ content:""; position:absolute; top:0; left:0; width:100%; height:5px; background:var(--orange); }
-.card:hover{ transform:translateY(-10px) scale(1.03); box-shadow:0 20px 45px rgba(255,138,0,.18); }
+.card:hover{ transform:translateY(-10px); stransform: scale(1.08); box-shadow:0 20px 45px rgba(255,138,0,.18); }
 .card h3{ font-size:40px; margin:0; color:var(--orange); }
 .card p{ margin-top:18px; font-size:18px; }
 .live-stats{ align-items:stretch; }
@@ -77,11 +77,12 @@ main { text-align:center; margin-top:120px; }
 .kick-card a:hover,
 .contact-button:hover {
   opacity:.94;
+    transform: scale(1.08);
 }
 .hero-buttons a:hover,
 .youtube-card a:hover,
 .kick-card a:hover {
-  transform:translateY(-4px) scale(1.05);
+  transform:translateY(-4px); transform: scale(1.08);
 }
 
 .youtube{ padding:102px 0; }
@@ -91,7 +92,7 @@ main { text-align:center; margin-top:120px; }
 .youtube-card h3{ font-size:30px; margin-top:0; color:var(--orange); }
 .youtube-card p{ line-height:1.8; color:var(--gray); }
 .youtube-card a{ display:inline-block; margin-top:25px; padding:14px 28px; background:#ff0000; color:white; text-decoration:none; border-radius:12px; font-weight:600; }
-.youtube-card:hover{ transform:translateY(-10px) scale(1.03); box-shadow:0 20px 45px rgba(255,0,0,.20); }
+.youtube-card:hover{ transform:translateY(-10px); transform: scale(1.08); box-shadow:0 20px 45px rgba(255,0,0,.20); }
 .latest-video-card{ padding:0; overflow:hidden; text-align:left; }
 .latest-video-link{ display:block; color:inherit; text-decoration:none; }
 .latest-video-thumb-wrap{ position:relative; aspect-ratio:16/9; overflow:hidden; background:#111; }
@@ -101,7 +102,7 @@ main { text-align:center; margin-top:120px; }
 .latest-video-label{ color:#ff5b5b; font-size:12px; font-weight:800; letter-spacing:1.2px; }
 .latest-video-info h3{ margin:8px 0 16px; font-size:22px; line-height:1.35; color:#fff; }
 .latest-video-open{ color:#ff5b5b; font-size:14px; font-weight:700; }
-.latest-video-card:hover{ transform:translateY(-10px) scale(1.03); box-shadow:0 20px 45px rgba(255,0,0,.20); }
+.latest-video-card:hover{ transform:translateY(-10px) scale(1.08); box-shadow:0 20px 45px rgba(255,0,0,.20); }
 .latest-video-card:hover .latest-video-thumb{ transform:scale(1.08); filter:brightness(1.08); }
 .latest-video-card:hover .latest-video-play{ transform:translate(-50%,-50%) scale(1.12); background:rgba(255,0,0,1); }
 .latest-video-loading{ padding:40px 28px; color:var(--gray); }
@@ -113,5 +114,5 @@ main { text-align:center; margin-top:120px; }
 .kick-card h3{ color:#53FC18; font-size:30px; margin-top:0; }
 .kick-card p{ color:var(--gray); line-height:1.8; }
 .kick-card a{ display:inline-block; margin-top:25px; padding:14px 30px; background:#53FC18; color:#111; font-weight:700; text-decoration:none; border-radius:12px; }
-.kick-card:hover{ transform:translateY(-10px) scale(1.03); box-shadow:0 20px 45px rgba(83,252,24,.25); }
+.kick-card:hover{ transform:translateY(-10px) scale(1.08); box-shadow:0 20px 45px rgba(83,252,24,.25); }
 @media (prefers-reduced-motion:reduce){ *,*::before,*::after{ transition:none !important; animation:none !important; scroll-behavior:auto !important; } }
