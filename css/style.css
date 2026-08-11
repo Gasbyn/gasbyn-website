@@ -1,6 +1,6 @@
 *{
     box-sizing:border-box;
-    transition:.25s ease;
+    transition:.375s ease;
 }
 
 :root {
@@ -34,7 +34,7 @@ main { text-align:center; margin-top:120px; }
 .hero-left{ flex:1; }
 .hero-right{ flex:1; display:flex; justify-content:center; position:relative; }
 .hero-right::before{ content:""; position:absolute; width:500px; height:500px; background:radial-gradient(circle,rgba(255,138,0,.28),transparent 70%); filter:blur(70px); z-index:-1; }
-.hero-right img{ width:450px; max-width:100%; filter:drop-shadow(0 30px 40px rgba(0,0,0,.5)); transform:perspective(1200px) rotateY(-12deg); transition:.35s; }
+.hero-right img{ width:450px; max-width:100%; filter:drop-shadow(0 30px 40px rgba(0,0,0,.5)); transform:perspective(1200px) rotateY(-12deg); transition:.525s ease; }
 .hero-right img:hover{ transform:perspective(1200px) rotateY(0deg) scale(1.05); }
 .hero-subtitle{ font-size:30px; font-weight:600; color:var(--orange); }
 .hero-description{ margin-top:25px; font-size:20px; line-height:1.8; color:var(--gray); max-width:650px; }
@@ -54,10 +54,9 @@ main { text-align:center; margin-top:120px; }
 .live-update::first-letter{ color:#65ff3b; }
 .kick-stat-card::before{ background:#53FC18; }
 .kick-stat-card h3{ color:#53FC18; }
-.hidden{ opacity:0; transform:translateY(50px); transition:all .8s ease; }
+.hidden{ opacity:0; transform:translateY(50px); transition:all 1.2s ease; }
 .show{ opacity:1; transform:translateY(0); }
 
-/* Smooth hover/fade interactions for the site's clickable dock-style elements. */
 .hero-buttons a,
 .latest-video-card,
 .youtube-card,
