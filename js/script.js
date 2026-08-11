@@ -50,12 +50,14 @@ function formatRoundedCount(value) {
 
 
 function escapeHtml(value) {
-    return String(value ?? "")
-        .replaceAll("&", "&")
-        .replaceAll("<", "<")
-        .replaceAll(">", ">")
-        .replaceAll('"', """)
-        .replaceAll("'", "&#039;");
+    const map = {
+        "&": "&" + "amp;",
+        "<": "&" + "lt;",
+        ">": "&" + "gt;",
+        '"': "&" + "quot;",
+        "'": "&#039;"
+    };
+    return String(value ?? "").replace(/[&<>"']/g, (ch) => map[ch]);
 }
 
 
@@ -69,7 +71,7 @@ async function loadHomeData() {
     }
 
     try {
-        const response = await fetch(`data.json?cache=${Date.now()}`, {
+        const response = await fetch("data.json?cache=" + Date.now(), {
             cache: "no-store"
         });
 
@@ -79,47 +81,44 @@ async function loadHomeData() {
 
         const data = await response.json();
 
-        if (youtubeSubscribers && data.youtube?.subscribers != null) {
+        if (youtubeSubscribers && data.youtube && data.youtube.subscribers != null) {
             youtubeSubscribers.textContent = formatRoundedCount(data.youtube.subscribers);
         }
 
-        if (kickFollowers && data.kick?.followers != null) {
+        if (kickFollowers && data.kick && data.kick.followers != null) {
             kickFollowers.textContent = formatRoundedCount(data.kick.followers);
         }
 
-        if (latestVideoCard && data.youtube?.latestVideo?.id) {
+        if (latestVideoCard && data.youtube && data.youtube.latestVideo && data.youtube.latestVideo.id) {
             const video = data.youtube.latestVideo;
             const safeTitle = escapeHtml(video.title);
             const safeThumbnail = escapeHtml(video.thumbnail);
-            const videoUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
+            const videoUrl = "https://www.youtube.com/watch?v=" + encodeURIComponent(video.id);
 
-            latestVideoCard.innerHTML = `
-                <a class="latest-video-link" href="${videoUrl}" target="_blank" rel="noopener noreferrer">
-                    <div class="latest-video-thumb-wrap">
-                        <img class="latest-video-thumb" src="${safeThumbnail}" alt="Miniatura videa: ${safeTitle}" loading="lazy">
-                        <span class="latest-video-play">▶</span>
-                    </div>
-                    <div class="latest-video-info">
-                        <span class="latest-video-label">NEJNOVĚJŠÍ VIDEO</span>
-                        <h3>${safeTitle}</h3>
-                        <span class="latest-video-open">▶ Otevřít na YouTube</span>
-                    </div>
-                </a>
-            `;
+            latestVideoCard.innerHTML =
+                '<a class="latest-video-link" href="' + videoUrl + '" target="_blank" rel="noopener noreferrer">' +
+                    '<div class="latest-video-thumb-wrap">' +
+                        '<img class="latest-video-thumb" src="' + safeThumbnail + '" alt="Miniatura videa: ' + safeTitle + '" loading="lazy">' +
+                        '<span class="latest-video-play">▶</span>' +
+                    '</div>' +
+                    '<div class="latest-video-info">' +
+                        '<span class="latest-video-label">NEJNOVĚJŠÍ VIDEO</span>' +
+                        '<h3>' + safeTitle + '</h3>' +
+                        '<span class="latest-video-open">▶ Otevřít na YouTube</span>' +
+                    '</div>' +
+                '</a>';
         } else if (latestVideoCard) {
-            latestVideoCard.innerHTML = `
-                <h3>Nejnovější video</h3>
-                <p>Nejnovější video se momentálně nepodařilo načíst.</p>
-                <a href="https://www.youtube.com/@Gasbyn" target="_blank" rel="noopener noreferrer">Přejít na YouTube</a>
-            `;
+            latestVideoCard.innerHTML =
+                '<h3>Nejnovější video</h3>' +
+                '<p>Nejnovější video se momentálně nepodařilo načíst.</p>' +
+                '<a href="https://www.youtube.com/@Gasbyn" target="_blank" rel="noopener noreferrer">Přejít na YouTube</a>';
         }
     } catch (error) {
         if (latestVideoCard) {
-            latestVideoCard.innerHTML = `
-                <h3>Nejnovější video</h3>
-                <p>Nejnovější video se momentálně nepodařilo načíst.</p>
-                <a href="https://www.youtube.com/@Gasbyn" target="_blank" rel="noopener noreferrer">Přejít na YouTube</a>
-            `;
+            latestVideoCard.innerHTML =
+                '<h3>Nejnovější video</h3>' +
+                '<p>Nejnovější video se momentálně nepodařilo načíst.</p>' +
+                '<a href="https://www.youtube.com/@Gasbyn" target="_blank" rel="noopener noreferrer">Přejít na YouTube</a>';
         }
     }
 }
@@ -129,9 +128,8 @@ loadHomeData();
 setInterval(loadHomeData, 6 * 60 * 60 * 1000);
 
 
-// Avatar: unlock hover after entrance animation finishes
-document.querySelectorAll(".hero-avatar, .hero-right img").forEach((img) => {
-    const unlock = () => img.classList.add("anim-done");
+document.querySelectorAll(".hero-avatar, .hero-right img").forEach(function (img) {
+    var unlock = function () { img.classList.add("anim-done"); };
     img.addEventListener("animationend", unlock, { once: true });
     setTimeout(unlock, 2200);
 });
