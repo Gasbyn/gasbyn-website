@@ -11,7 +11,9 @@ const observer = new IntersectionObserver((entries) => {
 hiddenElements.forEach((el) => observer.observe(el));
 
 // ===== LIVE HOME DATA =====
-// data.json is updated automatically by GitHub Actions approximately every 24 hours.
+// data.json is updated automatically by GitHub Actions approximately every 6 hours.
+// The browser also re-checks it periodically, so an already-open page can pick up
+// the newest video without needing a manual refresh.
 
 function formatRoundedCount(value) {
     const number = Number(value);
@@ -49,6 +51,7 @@ async function loadHomeData() {
     if (!youtubeSubscribers && !kickFollowers && !latestVideoCard) return;
 
     try {
+        // Cache-busting makes sure visitors receive the latest committed data.json.
         const response = await fetch(`data.json?cache=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) throw new Error("Data unavailable");
 
@@ -94,3 +97,6 @@ async function loadHomeData() {
 }
 
 loadHomeData();
+
+// If the page stays open, check again after 6 hours as well.
+setInterval(loadHomeData, 6 * 60 * 60 * 1000);
