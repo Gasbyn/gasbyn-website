@@ -1,28 +1,39 @@
-const hiddenElements = document.querySelectorAll(".hidden");
+const hiddenElements = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            // once shown, stop observing (smoother, no re-hide)
             observer.unobserve(entry.target);
         }
     });
 }, {
-    threshold: 0.12,
-    rootMargin: "0px 0px -40px 0px"
+    threshold: 0.05,
+    rootMargin: "0px 0px -20px 0px"
 });
 
 hiddenElements.forEach((el) => observer.observe(el));
 
+// safety: if something stays invisible, force show after 1s
+setTimeout(() => {
+    document.querySelectorAll(".reveal:not(.show)").forEach((el) => {
+        el.classList.add("show");
+    });
+}, 1000);
+
+// also show anything already in viewport immediately
+requestAnimationFrame(() => {
+    hiddenElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add("show");
+            observer.unobserve(el);
+        }
+    });
+});
+
 
 // ===== LIVE HOME DATA =====
-
-// data.json se aktualizuje automaticky přes GitHub Actions
-// přibližně každých 6 hodin.
-// Pokud má někdo web už otevřený, stránka si data znovu načte
-// bez nutnosti obnovovat stránku.
-
 
 function formatRoundedCount(value) {
 
@@ -90,7 +101,6 @@ async function loadHomeData() {
 
     try {
 
-        // Cache busting zajistí načtení aktuálního data.json.
         const response = await fetch(
             `data.json?cache=${Date.now()}`,
             {
@@ -107,8 +117,6 @@ async function loadHomeData() {
         const data = await response.json();
 
 
-        // ===== YOUTUBE ODBĚRATELÉ =====
-
         if (
             youtubeSubscribers &&
             data.youtube?.subscribers != null
@@ -122,8 +130,6 @@ async function loadHomeData() {
         }
 
 
-        // ===== KICK FOLLOWERS =====
-
         if (
             kickFollowers &&
             data.kick?.followers != null
@@ -136,8 +142,6 @@ async function loadHomeData() {
 
         }
 
-
-        // ===== NEJNOVĚJŠÍ VIDEO =====
 
         if (
             latestVideoCard &&
@@ -242,14 +246,7 @@ async function loadHomeData() {
 }
 
 
-// ===== PRVNÍ NAČTENÍ =====
-
 loadHomeData();
-
-
-// ===== AUTOMATICKÁ KONTROLA =====
-
-// Kontrola každých 6 hodin.
 
 setInterval(
     loadHomeData,
