@@ -1,17 +1,16 @@
 const hiddenElements = document.querySelectorAll(".hidden");
 
 const observer = new IntersectionObserver((entries) => {
-
     entries.forEach((entry) => {
-
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
+            // once shown, stop observing (smoother, no re-hide)
+            observer.unobserve(entry.target);
         }
-
     });
-
 }, {
-    threshold:0.08
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
 });
 
 hiddenElements.forEach((el) => observer.observe(el));
@@ -59,10 +58,10 @@ function formatRoundedCount(value) {
 function escapeHtml(value) {
 
     return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
+        .replaceAll("&", "&")
+        .replaceAll("<", "<")
+        .replaceAll(">", ">")
+        .replaceAll('"', """)
         .replaceAll("'", "&#039;");
 
 }
