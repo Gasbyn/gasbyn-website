@@ -5,34 +5,14 @@ body { overflow-x: hidden; }
 
 /* Tablets / smaller laptops */
 @media (max-width: 1000px) {
-    .navbar {
-        padding: 16px 28px;
-        gap: 18px;
-    }
-
-    .nav-links {
-        gap: 18px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-    }
-
-    .container {
-        width: min(92%, 900px);
-    }
-
-    .hero-content {
-        gap: 30px;
-    }
-
-    .hero h1 {
-        font-size: 72px;
-    }
-
-    .hero-right img {
-        width: 380px;
-    }
+    .navbar { padding: 16px 28px; gap: 18px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 16px; }
+    .container { width: min(92%, 900px); }
+    .hero-content { gap: 30px; }
+    .hero h1 { font-size: 72px; }
+    .hero-right img { width: 380px; }
+    .stats { gap: 22px; }
 }
 
 /* Phones + portrait tablets */
@@ -44,9 +24,7 @@ body { overflow-x: hidden; }
         gap: 9px 14px;
     }
 
-    .logo {
-        font-size: 26px;
-    }
+    .logo { font-size: 26px; }
 
     .nav-links {
         order: 3;
@@ -56,340 +34,120 @@ body { overflow-x: hidden; }
         overflow-x: auto;
         scrollbar-width: none;
         padding: 2px 2px 4px;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
     }
 
     .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { font-size: 14px; white-space: nowrap; }
+    .contact-button { padding: 8px 13px; font-size: 14px; white-space: nowrap; }
 
-    .nav-links a {
-        font-size: 14px;
-        white-space: nowrap;
-    }
-
-    .contact-button {
-        padding: 8px 13px;
-        font-size: 14px;
-        white-space: nowrap;
-    }
-
-    main {
-        margin-top: 55px;
-    }
-
-    .container {
-        width: calc(100% - 28px);
-    }
+    main { margin-top: 45px; }
+    .container { width: calc(100% - 28px); }
 
     /* HOME */
-    .hero {
-        min-height: auto;
-        padding: 50px 0 75px;
-    }
+    .hero { min-height: auto; padding: 50px 0 64px; }
+    .hero-content { flex-direction: column; text-align: center; gap: 28px; }
+    .hero-left, .hero-right { width: 100%; }
+    .hero h1 { font-size: 58px; }
+    .hero-subtitle { font-size: 20px; }
+    .hero-description { font-size: 16px; line-height: 1.7; margin-left: auto; margin-right: auto; }
+    .hero-buttons { justify-content: center; gap: 10px; margin-top: 28px; }
+    .hero-buttons a { padding: 13px 20px; font-size: 16px; }
+    .hero-right img { width: min(330px, 82vw); }
 
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
+    .about, .youtube, .kick { padding: 64px 0; }
+    .about h2, .youtube h2, .kick h2 { font-size: 38px; margin-bottom: 27px; }
+    .about-text { font-size: 17px; }
 
-    .hero-left,
-    .hero-right {
-        width: 100%;
-    }
+    .stats { gap: 12px; margin-top: 34px; }
+    .card { width: 100%; max-width: 330px; padding: 30px 24px; }
+    .live-stat-card { min-height: 170px; }
+    .card h3 { font-size: 34px; }
+    .card p { font-size: 16px; }
+    .live-update { font-size: 10px; }
 
-    .hero h1 {
-        font-size: 58px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-        line-height: 1.7;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        gap: 10px;
-        margin-top: 28px;
-    }
-
-    .hero-buttons a {
-        padding: 13px 20px;
-        font-size: 16px;
-    }
-
-    .hero-right img {
-        width: min(330px, 82vw);
-    }
-
-    .about,
-    .youtube,
-    .kick {
-        padding: 75px 0;
-    }
-
-    .about h2,
-    .youtube h2,
-    .kick h2 {
-        font-size: 38px;
-        margin-bottom: 32px;
-    }
-
-    .about-text {
-        font-size: 17px;
-    }
-
-    .stats {
-        gap: 15px;
-        margin-top: 40px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 330px;
-    }
-
-    .youtube-grid,
-    .kick-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .youtube-card,
-    .kick-card {
-        padding: 26px 22px;
-    }
+    .youtube-grid, .kick-grid { grid-template-columns: 1fr; gap: 16px; }
+    .youtube-card, .kick-card { padding: 24px 20px; }
+    .latest-video-card { padding: 0; }
+    .latest-video-info { padding: 20px 20px 23px; }
+    .latest-video-info h3 { font-size: 19px; }
+    .latest-video-play { width: 52px; height: 52px; }
 
     /* COMMANDS */
-    .commands-hero {
-        padding: 55px 15px 35px;
-    }
-
-    .commands-hero h1 {
-        font-size: 40px;
-    }
-
-    .commands-hero p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .top-bar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 14px;
-    }
-
-    #search {
-        width: 100%;
-        min-width: 0;
-        font-size: 16px;
-    }
-
-    .stats {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .stat {
-        flex: 1;
-        min-width: 120px;
-        padding: 14px 16px;
-    }
-
-    #commandsGrid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        padding-bottom: 70px;
-    }
-
-    .command-card {
-        padding: 22px;
-    }
-
-    .command-card h3 {
-        font-size: 25px;
-        overflow-wrap: anywhere;
-    }
-
-    .command-card p {
-        font-size: 15px;
-        overflow-wrap: anywhere;
-    }
-
-    .buttons {
-        flex-direction: row;
-    }
-
-    .buttons button {
-        min-width: 0;
-        padding: 13px 10px;
-    }
+    .commands-hero { padding: 50px 15px 32px; }
+    .commands-hero h1 { font-size: 40px; }
+    .commands-hero p { font-size: 16px; line-height: 1.6; }
+    .top-bar { flex-direction: column; align-items: stretch; gap: 12px; }
+    #search { width: 100%; min-width: 0; font-size: 16px; }
+    #commandsGrid { grid-template-columns: 1fr; gap: 16px; padding-bottom: 64px; }
+    .command-card { padding: 20px; }
+    .command-card h3 { font-size: 24px; overflow-wrap: anywhere; }
+    .command-card p { font-size: 15px; overflow-wrap: anywhere; }
+    .buttons { flex-direction: row; }
+    .buttons button { min-width: 0; padding: 12px 10px; }
 
     /* SHOP */
-    .shop-hero {
-        padding: 55px 15px 35px;
-    }
-
-    .shop-hero h1 {
-        font-size: 42px;
-    }
-
-    .shop-hero p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .shop-grid {
-        width: calc(100% - 28px);
-        grid-template-columns: 1fr;
-        gap: 18px;
-        margin-bottom: 70px;
-    }
-
-    .product-content {
-        padding: 20px;
-    }
-
-    .product-content h2 {
-        font-size: 20px;
-    }
-
-    .product-command {
-        font-size: 13px;
-        overflow-wrap: anywhere;
-    }
+    .shop-hero { padding: 50px 15px 32px; }
+    .shop-hero h1 { font-size: 42px; }
+    .shop-hero p { font-size: 16px; line-height: 1.6; }
+    .shop-grid { width: calc(100% - 28px); grid-template-columns: 1fr; gap: 16px; margin-bottom: 64px; }
+    .product-content { padding: 20px; }
+    .product-content h2 { font-size: 20px; }
+    .product-command { font-size: 13px; overflow-wrap: anywhere; }
 
     /* MERCH + CONTACT */
-    .merch-page,
-    .contact-page {
-        min-height: auto;
-        padding: 55px 14px 75px;
-    }
-
-    .merch-hero,
-    .contact-card {
-        padding: 45px 22px;
-        border-radius: 20px;
-    }
-
-    .merch-hero h1,
-    .contact-card h1 {
-        font-size: 42px;
-    }
-
-    .merch-status {
-        font-size: 22px;
-    }
-
-    .merch-description {
-        font-size: 16px;
-    }
-
-    .contact-intro {
-        font-size: 17px;
-    }
-
-    .contact-option {
-        padding: 14px 15px;
-    }
-
-    .contact-option small {
-        overflow-wrap: anywhere;
-    }
+    .merch-page, .contact-page { min-height: auto; padding: 50px 14px 64px; }
+    .merch-hero, .contact-card { padding: 42px 20px; border-radius: 20px; }
+    .merch-hero h1, .contact-card h1 { font-size: 42px; }
+    .merch-status { font-size: 22px; }
+    .merch-description { font-size: 16px; }
+    .contact-intro { font-size: 17px; }
+    .contact-option { padding: 14px 15px; }
+    .contact-option small { overflow-wrap: anywhere; }
 }
 
 /* Small phones */
 @media (max-width: 430px) {
-    .navbar {
-        padding: 11px 10px;
-    }
-
-    .logo {
-        font-size: 23px;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .contact-button {
-        font-size: 13px;
-        padding: 7px 10px;
-    }
-
-    .hero h1 {
-        font-size: 46px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hero-buttons a {
-        width: 100%;
-    }
-
-    .hero-right img {
-        width: min(280px, 82vw);
-    }
-
-    .about h2,
-    .youtube h2,
-    .kick h2 {
-        font-size: 32px;
-    }
-
-    .command-card,
-    .product-content {
-        padding: 19px;
-    }
-
-    .buttons button {
-        font-size: 13px;
-    }
+    .navbar { padding: 11px 10px; }
+    .logo { font-size: 23px; }
+    .nav-links a { font-size: 13px; }
+    .contact-button { font-size: 13px; padding: 7px 10px; }
+    .hero h1 { font-size: 46px; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons a { width: 100%; }
+    .hero-right img { width: min(280px, 82vw); }
+    .about h2, .youtube h2, .kick h2 { font-size: 32px; }
+    .command-card, .product-content { padding: 19px; }
+    .buttons button { font-size: 13px; }
 }
 
 /* TVs / 4K screens */
 @media (min-width: 1800px) {
-    .container {
-        width: min(1500px, 88%);
-    }
+    .container { width: min(1500px, 88%); }
+    .navbar { padding: 26px 80px; }
+    .nav-links { gap: 45px; }
+    .nav-links a { font-size: 20px; }
+    .hero h1 { font-size: 110px; }
+    .hero-description { font-size: 23px; }
+    .hero-right img { width: 520px; }
+    .shop-grid { width: min(1500px, 88%); grid-template-columns: repeat(4, 1fr); }
+    #commandsGrid { grid-template-columns: repeat(3, 1fr); }
+}
 
-    .navbar {
-        padding: 26px 80px;
+/* Touch devices: avoid sticky hover effects feeling laggy */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover, .youtube-card:hover, .kick-card:hover, .hero-buttons a:hover,
+    .contact-button:hover, .logo:hover, .hero-right img:hover {
+        transform: none;
+        box-shadow: inherit;
     }
+}
 
-    .nav-links {
-        gap: 45px;
-    }
-
-    .nav-links a {
-        font-size: 20px;
-    }
-
-    .hero h1 {
-        font-size: 110px;
-    }
-
-    .hero-description {
-        font-size: 23px;
-    }
-
-    .hero-right img {
-        width: 520px;
-    }
-
-    .shop-grid {
-        width: min(1500px, 88%);
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    #commandsGrid {
-        grid-template-columns: repeat(3, 1fr);
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
     }
 }
