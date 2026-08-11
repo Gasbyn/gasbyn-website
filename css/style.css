@@ -47,8 +47,17 @@ body {
   gap: 35px;
   list-style: none;
 }
-.nav-links a { color: var(--white); text-decoration: none; font-size: 18px; }
-.nav-links a:hover{ color:var(--orange); }
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  transform-origin: center;
+}
+.nav-links a:hover{
+  color:var(--orange);
+  transform:scale(1.12);
+}
 
 .contact-button {
   background: var(--orange);
@@ -56,8 +65,10 @@ body {
   text-decoration: none;
   padding: 10px 18px;
   border-radius: 10px;
+  display:inline-block;
+  transform-origin:center;
 }
-.contact-button:hover{ transform:translateY(-3px); }
+.contact-button:hover{ transform:translateY(-3px) scale(1.08); }
 
 main { text-align: center; margin-top: 120px; }
 .hero { min-height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; }
