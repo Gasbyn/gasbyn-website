@@ -1,6 +1,5 @@
-/* ===== ANIMATION DETAILS / MICRO-INTERACTIONS ===== */
+/* ===== ANIMATION DETAILS / MICRO-INTERACTIONS (slower) ===== */
 
-/* Card shine sweep on hover */
 .card,
 .youtube-card,
 .kick-card {
@@ -24,7 +23,7 @@
     transparent
   );
   pointer-events: none;
-  transition: left .7s cubic-bezier(.22,1,.36,1);
+  transition: left 1.2s cubic-bezier(.22,1,.36,1);
   z-index: 1;
 }
 
@@ -34,9 +33,8 @@
   left: 120%;
 }
 
-/* Top accent bar glow */
 .card::before {
-  transition: height .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+  transition: height .7s cubic-bezier(.22,1,.36,1), box-shadow .7s ease;
 }
 
 .card:hover::before {
@@ -52,7 +50,7 @@
   width: 100%;
   height: 4px;
   background: #53FC18;
-  transition: height .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+  transition: height .7s cubic-bezier(.22,1,.36,1), box-shadow .7s ease;
   z-index: 2;
 }
 
@@ -61,7 +59,6 @@
   box-shadow: 0 0 18px rgba(83,252,24,.55);
 }
 
-/* Buttons: light shine sweep */
 .hero-buttons a,
 .contact-button,
 .youtube-card a,
@@ -87,7 +84,7 @@
     rgba(255,255,255,.28),
     transparent
   );
-  transition: left .55s cubic-bezier(.22,1,.36,1);
+  transition: left 1s cubic-bezier(.22,1,.36,1);
   z-index: -1;
 }
 
@@ -98,9 +95,8 @@
   left: 130%;
 }
 
-/* Live status soft blink */
 .live-update {
-  animation: livePulse 2s ease-in-out infinite;
+  animation: livePulse 2.8s ease-in-out infinite;
 }
 
 @keyframes livePulse {
@@ -108,32 +104,29 @@
   50% { opacity: .55; }
 }
 
-/* Logo glow on hover */
 .logo {
   text-shadow: 0 0 0 transparent;
   transition:
-    transform .28s cubic-bezier(.22,1,.36,1),
-    color .25s ease,
-    text-shadow .35s ease !important;
+    transform .6s cubic-bezier(.22,1,.36,1),
+    color .5s ease,
+    text-shadow .7s ease !important;
 }
 
 .logo:hover {
   text-shadow: 0 0 22px rgba(255,138,0,.55);
 }
 
-/* Nav letter-spacing */
 .nav-links a {
   transition:
-    color .25s ease,
-    transform .28s cubic-bezier(.22,1,.36,1),
-    letter-spacing .28s ease !important;
+    color .5s ease,
+    transform .6s cubic-bezier(.22,1,.36,1),
+    letter-spacing .6s ease !important;
 }
 
 .nav-links a:hover {
   letter-spacing: .4px;
 }
 
-/* Section title underline grows */
 .about h2,
 .youtube h2,
 .kick h2 {
@@ -153,7 +146,7 @@
   border-radius: 3px;
   background: currentColor;
   transform: translateX(-50%);
-  transition: width .45s cubic-bezier(.22,1,.36,1);
+  transition: width .85s cubic-bezier(.22,1,.36,1);
   opacity: .85;
 }
 
@@ -163,12 +156,11 @@
   width: 56%;
 }
 
-/* Avatar hover more pronounced */
 .hero-avatar,
 .hero-right img {
   transition:
-    transform .6s cubic-bezier(.22,1,.36,1),
-    filter .6s ease !important;
+    transform 0.9s cubic-bezier(.22,1,.36,1),
+    filter 0.9s ease !important;
 }
 
 .hero-avatar-wrap:hover img,
@@ -178,19 +170,17 @@
   filter: drop-shadow(0 42px 60px rgba(255,138,0,.32)) !important;
 }
 
-/* Stat number pop */
 .card h3 {
   display: inline-block;
-  transition: transform .35s cubic-bezier(.22,1,.36,1);
+  transition: transform .7s cubic-bezier(.22,1,.36,1);
 }
 
 .card:hover h3 {
   transform: scale(1.06);
 }
 
-/* Play button pulse ring */
 .latest-video-play {
-  animation: playPulse 2.4s ease-in-out infinite;
+  animation: playPulse 3.2s ease-in-out infinite;
 }
 
 @keyframes playPulse {
@@ -206,14 +196,12 @@
   animation: none;
 }
 
-/* Focus rings */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--orange, #ff8a00);
   outline-offset: 3px;
 }
 
-/* Commands page extras */
 .command-card {
   position: relative;
   overflow: hidden;
@@ -228,7 +216,7 @@ button:focus-visible {
   height: 100%;
   background: linear-gradient(105deg, transparent, rgba(255,255,255,.05), transparent);
   pointer-events: none;
-  transition: left .65s cubic-bezier(.22,1,.36,1);
+  transition: left 1.1s cubic-bezier(.22,1,.36,1);
 }
 
 .command-card:hover::after {
@@ -236,7 +224,7 @@ button:focus-visible {
 }
 
 .command-card::before {
-  transition: height .3s ease, box-shadow .3s ease;
+  transition: height .6s ease, box-shadow .6s ease;
 }
 
 .command-card:hover::before {
@@ -259,7 +247,7 @@ button:focus-visible {
   width: 55%;
   height: 100%;
   background: linear-gradient(120deg, transparent, rgba(255,255,255,.3), transparent);
-  transition: left .5s cubic-bezier(.22,1,.36,1);
+  transition: left .9s cubic-bezier(.22,1,.36,1);
 }
 
 .copy:hover::before,
@@ -268,7 +256,7 @@ button:focus-visible {
 }
 
 #toast.show {
-  animation: toastPop .5s cubic-bezier(.22,1,.36,1);
+  animation: toastPop 0.9s cubic-bezier(.22,1,.36,1);
 }
 
 @keyframes toastPop {
@@ -281,7 +269,6 @@ button:focus-visible {
   box-shadow: 0 8px 22px rgba(83,252,24,.25);
 }
 
-/* Shop page extras */
 .product-card {
   position: relative;
   overflow: hidden;
@@ -296,7 +283,7 @@ button:focus-visible {
   height: 100%;
   background: linear-gradient(105deg, transparent, rgba(255,255,255,.05), transparent);
   pointer-events: none;
-  transition: left .65s cubic-bezier(.22,1,.36,1);
+  transition: left 1.1s cubic-bezier(.22,1,.36,1);
   z-index: 2;
 }
 
@@ -305,7 +292,7 @@ button:focus-visible {
 }
 
 .product-card::before {
-  transition: height .3s ease, box-shadow .3s ease;
+  transition: height .6s ease, box-shadow .6s ease;
 }
 
 .product-card:hover::before {
@@ -326,7 +313,7 @@ button:focus-visible {
   width: 55%;
   height: 100%;
   background: linear-gradient(120deg, transparent, rgba(255,255,255,.28), transparent);
-  transition: left .5s cubic-bezier(.22,1,.36,1);
+  transition: left .9s cubic-bezier(.22,1,.36,1);
 }
 
 .copy-product:hover::before {
@@ -334,7 +321,7 @@ button:focus-visible {
 }
 
 #shopToast.show {
-  animation: shopToastPop .5s cubic-bezier(.22,1,.36,1);
+  animation: shopToastPop 0.9s cubic-bezier(.22,1,.36,1);
 }
 
 @keyframes shopToastPop {
