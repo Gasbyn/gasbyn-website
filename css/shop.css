@@ -80,6 +80,8 @@ flex-direction: column;
 
 .product-card:hover {
 
+transform: scale(1.08);
+    
     transform: translateY(-6px);
 
     box-shadow:
@@ -119,7 +121,7 @@ flex-direction: column;
 .product-card:hover
 .product-image img {
 
-    transform: scale(1.04);
+    transform: scale(1.08);
 }
 
 
@@ -210,6 +212,8 @@ flex-direction: column;
 
     background: #ffa31a;
 
+transform: scale(1.08);
+    
     transform: translateY(-2px);
 }
 
