@@ -166,6 +166,8 @@ font-size:15px;
 
 .category:hover{
 
+transform: scale(1.08);
+    
 background:#53FC18;
 
 color:#111;
@@ -220,6 +222,8 @@ transition:.3s;
 
 .command-card:hover{
 
+    transform: scale(1.08);
+    
 transform:translateY(-8px);
 
 box-shadow:0 20px 45px rgba(83,252,24,.18);
@@ -340,7 +344,7 @@ color:#111;
 
 .copy:hover{
 
-transform:scale(1.04);
+transform: scale(1.08);
 
 }
 
@@ -358,7 +362,7 @@ color:white;
 
 .favorite:hover{
 
-transform:scale(1.04);
+transform: scale(1.08);
 
 }
 
@@ -372,6 +376,8 @@ left:50%;
 
 bottom:30px;
 
+transform: scale(1.08);
+    
 transform:translateX(-50%) translateY(120px);
 
 background:#53FC18;
@@ -449,6 +455,8 @@ flex-direction:column;
 
 .secret-card:hover {
     box-shadow: 0 20px 45px rgba(255, 157, 0, 0.18);
+
+    transform: scale(1.08);
 }
 
 .secret-card .tag {
