@@ -1,0 +1,88 @@
+/* ===== Google AdSense slots (family-friendly, discrete) ===== */
+
+.ad-rail {
+  display: none;
+  position: fixed;
+  top: 110px;
+  width: 160px;
+  z-index: 40;
+  pointer-events: auto;
+}
+
+.ad-rail-inner {
+  width: 160px;
+  min-height: 200px;
+  max-height: calc(100vh - 140px);
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6px;
+}
+
+/* Jen na širokých monitorech – na telefonu/tabletu skryté */
+@media (min-width: 1400px) {
+  .ad-rail {
+    display: block;
+  }
+  .ad-rail-left {
+    left: max(10px, calc((100vw - 1200px) / 2 - 180px));
+  }
+  .ad-rail-right {
+    right: max(10px, calc((100vw - 1200px) / 2 - 180px));
+  }
+}
+
+.ad-footer {
+  width: min(728px, 92%);
+  margin: 40px auto 20px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px;
+  overflow: hidden;
+}
+
+.ad-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #777;
+  text-align: center;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 28px 16px 40px;
+  color: #888;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 40px;
+}
+
+.site-footer a {
+  color: var(--orange, #ff8a00);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Placeholder když ještě není AdSense kód */
+.ad-placeholder {
+  color: #555;
+  font-size: 11px;
+  text-align: center;
+  padding: 24px 8px;
+  line-height: 1.4;
+}
