@@ -1,43 +1,62 @@
-/* ===== Google AdSense – pevný levý panel + spodní banner ===== */
+/* ===== Google AdSense – 4 pevné panely úplně vlevo ===== */
 
-/* Levý panel – FIXED, nehýbe se se scrollem */
-.ad-rail {
+/* Kontejner: fixed na levém okraji, nehýbe se se scrollem */
+.ad-rail-stack {
   display: none;
   position: fixed;
-  top: 100px;
-  left: 12px;
-  width: 160px;
+  top: 88px;
+  left: 0;
+  width: 168px;
   z-index: 40;
   pointer-events: auto;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px 6px 8px 4px;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
 }
 
-.ad-rail-inner {
+.ad-rail-stack::-webkit-scrollbar {
+  width: 4px;
+}
+.ad-rail-stack::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+
+/* Jednotlivý panel */
+.ad-panel {
   width: 160px;
-  min-height: 600px;
-  max-height: calc(100vh - 130px);
-  overflow: hidden;
-  border-radius: 14px;
+  min-height: 140px;
+  flex-shrink: 0;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
-/* Jen na širokých monitorech (místo vedle obsahu) */
-@media (min-width: 1400px) {
-  .ad-rail {
-    display: block;
-  }
-  .ad-rail-left {
-    left: max(12px, calc((100vw - 1100px) / 2 - 190px));
+/* První panel vyšší (klasický skyscraper slot) */
+.ad-panel--tall {
+  min-height: 280px;
+}
+
+/* Jen na širokých monitorech */
+@media (min-width: 1280px) {
+  .ad-rail-stack {
+    display: flex;
   }
 }
 
-/* Spodní reklama pod obsahem (pod Kick / konec main) */
+/* Spodní reklama pod obsahem */
 .ad-footer {
   width: min(728px, 92%);
   margin: 48px auto 24px;
@@ -56,11 +75,11 @@
 
 .ad-label {
   display: block;
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.6px;
   color: #666;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   text-transform: uppercase;
   width: 100%;
 }
@@ -83,13 +102,12 @@
   text-decoration: underline;
 }
 
-/* Placeholder než bude AdSense unit */
 .ad-placeholder {
   color: #555;
   font-size: 11px;
   text-align: center;
-  padding: 28px 8px;
-  line-height: 1.45;
+  padding: 20px 6px;
+  line-height: 1.4;
   width: 100%;
 }
 
