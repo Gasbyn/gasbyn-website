@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="css/commands.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/ads.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5998811646625855" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -22,6 +24,15 @@
 <a class="contact-button" href="contact.html">Kontakt</a>
 </nav>
 </header>
+
+<aside class="ad-rail ad-rail-left" aria-label="Reklama">
+  <span class="ad-label">Reklama</span>
+  <div class="ad-rail-inner">
+    <div class="ad-placeholder">160×600<br>místo pro reklamu</div>
+  </div>
+</aside>
+
+<main>
 <section class="commands-hero"><div class="container"><h1>💬 Kick příkazy</h1><p>Najdi všechny dostupné příkazy na mém Kick streamu.</p></div></section>
 <section class="container"><div class="top-bar"><input id="search" type="text" placeholder="🔍 Hledat příkaz..."><div class="stats"><div class="stat"><span id="commandCount">0</span><p>Příkazů</p></div><div class="stat"><span id="favoriteCount">0</span><p>Oblíbených</p></div></div></div></section>
 <section class="container"><div class="categories">
@@ -35,6 +46,17 @@
 <button class="category" data-category="secret">❓ Secret</button>
 </div></section>
 <section class="container"><div id="commandsGrid"></div></section>
+</main>
+
+<div class="ad-footer" aria-label="Reklama">
+  <span class="ad-label">Reklama</span>
+  <div class="ad-placeholder">728×90 / responsive – místo pro reklamu</div>
+</div>
+
+<footer class="site-footer">
+<p>© Gasbyn · <a href="privacy.html">Ochrana soukromí</a> · <a href="contact.html">Kontakt</a></p>
+</footer>
+
 <div id="toast">✅ Příkaz zkopírován.</div>
 <script src="js/commands.js"></script>
 </body>
