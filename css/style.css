@@ -46,17 +46,35 @@ border-bottom:1px solid rgba(255,255,255,.08);
 animation: fadeDown 1.2s var(--ease-out) both;
 }
 
-.logo{
+.logo,
+a.logo{
 color:var(--orange);
 font-size:34px;
 font-weight:800;
 letter-spacing:2px;
 cursor:pointer;
-transition: transform .6s cubic-bezier(.22,1,.36,1), color .5s ease;
+text-decoration:none !important;
+border:none;
+border-bottom:none !important;
+box-shadow:none;
+display:inline-block;
+transition: transform .6s cubic-bezier(.22,1,.36,1), color .5s ease, text-shadow .6s ease;
 }
 
-.logo:hover{ transform:scale(1.08); }
-.logo:active{ transform:scale(0.96); }
+.logo::after,
+.logo::before,
+a.logo::after,
+a.logo::before{
+content:none !important;
+display:none !important;
+width:0 !important;
+height:0 !important;
+}
+
+.logo:hover,
+a.logo:hover{ transform:scale(1.08); text-decoration:none !important; }
+.logo:active,
+a.logo:active{ transform:scale(0.96); }
 
 .nav-links {
 display:flex;
