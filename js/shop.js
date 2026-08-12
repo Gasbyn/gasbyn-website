@@ -12,14 +12,6 @@ const products = [
     },
 
     {
-        name: "Připomínka na SAC",
-        description: "Gasbyn připomene na Streamu na SAC.",
-        status: "Cena: 100 Granulek",
-        image: "assets/images/SAC.png",
-        code: "!shop buy SAC"
-    },
-
-    {
         name: "Challenge na 1 Hru",
         description: "Vybereš Gasbynovy Challenge na jednu hru. Neplatí pro Cupy a Tournamenty.",
         status: "Cena: 1000 Granulek",
@@ -27,12 +19,20 @@ const products = [
         code: "!shop buy challenge"
     },
 
-    {
+   {
         name: "10 Dřepů na Streamu",
         description: "Gasbyn udělá 10 dřepů na streamu.",
         status: "Cena: 500 Granulek",
         image: "assets/images/10drepu.png",
         code: "!shop buy 10drepu"
+    },
+
+    {
+        name: "Připomínka na SAC",
+        description: "Gasbyn připomene na Streamu na SAC.",
+        status: "Cena: 100 Granulek",
+        image: "assets/images/SAC.png",
+        code: "!shop buy SAC"
     }
 
 ];
