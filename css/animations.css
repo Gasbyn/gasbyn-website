@@ -33,7 +33,8 @@
 .command-card,
 .product-card,
 .stat,
-.secret-card {
+.secret-card,
+.shop-info {
   transform: none;
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
@@ -48,9 +49,16 @@
 .command-card:hover,
 .product-card:hover,
 .stat:hover,
-.secret-card:hover {
+.secret-card:hover,
+.shop-info:hover {
   transform: scale(1.04) translateY(-6px) !important;
   filter: brightness(1.04);
+}
+
+.shop-info:hover {
+  box-shadow: 0 14px 36px rgba(255, 140, 0, 0.22) !important;
+  border-color: rgba(255, 140, 0, 0.5) !important;
+  background: rgba(255, 140, 0, 0.12) !important;
 }
 
 .copy,
@@ -188,7 +196,8 @@
 .youtube-card::after,
 .kick-card::after,
 .command-card::after,
-.product-card::after {
+.product-card::after,
+.shop-info::after {
   content: "";
   position: absolute;
   top: 0;
@@ -210,7 +219,8 @@
 .youtube-card:hover::after,
 .kick-card:hover::after,
 .command-card:hover::after,
-.product-card:hover::after {
+.product-card:hover::after,
+.shop-info:hover::after {
   left: 120%;
 }
 
