@@ -27,11 +27,23 @@
 </nav>
 </header>
 
-<!-- Pevný levý panel (nehýbe se se scrollem) -->
-<aside class="ad-rail ad-rail-left" aria-label="Reklama">
-  <span class="ad-label">Reklama</span>
-  <div class="ad-rail-inner">
-    <div class="ad-placeholder">160×600<br>místo pro reklamu</div>
+<!-- 4 pevné panely úplně vlevo (locked při scrollu) -->
+<aside class="ad-rail-stack" aria-label="Reklamy">
+  <div class="ad-panel ad-panel--tall">
+    <span class="ad-label">Reklama</span>
+    <div class="ad-placeholder">160×280</div>
+  </div>
+  <div class="ad-panel">
+    <span class="ad-label">Reklama</span>
+    <div class="ad-placeholder">160×140</div>
+  </div>
+  <div class="ad-panel">
+    <span class="ad-label">Reklama</span>
+    <div class="ad-placeholder">160×140</div>
+  </div>
+  <div class="ad-panel">
+    <span class="ad-label">Reklama</span>
+    <div class="ad-placeholder">160×140</div>
   </div>
 </aside>
 
@@ -86,7 +98,6 @@
 </section>
 </main>
 
-<!-- Spodní reklama pod Kick sekcí -->
 <div class="ad-footer" aria-label="Reklama">
   <span class="ad-label">Reklama</span>
   <div class="ad-placeholder">728×90 / responsive – místo pro reklamu</div>
