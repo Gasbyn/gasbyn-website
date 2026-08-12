@@ -2,7 +2,7 @@
 
 .shop-hero {
 text-align:center;
-padding:100px 20px 60px;
+padding:100px 20px 30px;
 }
 
 .shop-hero h1 {
@@ -15,6 +15,37 @@ margin:0 0 15px;
 .shop-hero p {
 color:#d0d0d0;
 font-size:20px;
+}
+
+
+/* ===== INFO BANNER ===== */
+
+.shop-info {
+width:min(700px, 90%);
+margin:0 auto 40px;
+padding:18px 22px;
+background:rgba(255, 140, 0, 0.08);
+border:1px solid rgba(255, 140, 0, 0.28);
+border-radius:14px;
+text-align:center;
+}
+
+.shop-info strong {
+display:block;
+color:#ff9d00;
+font-size:16px;
+margin-bottom:8px;
+}
+
+.shop-info p {
+margin:0;
+color:#d0d0d0;
+font-size:15px;
+line-height:1.65;
+}
+
+.shop-info b {
+color:#fff;
 }
 
 
@@ -155,6 +186,12 @@ grid-template-columns: 1fr;
 }
 .shop-hero h1 {
 font-size:40px;
+}
+.shop-info {
+padding:16px 18px;
+}
+.shop-info p {
+font-size:14px;
 }
 }
 
