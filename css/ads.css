@@ -1,11 +1,12 @@
-/* ===== Google AdSense – 4 pevné panely úplně vlevo ===== */
+/* ===== Reklamy: fixed při scrollu, skryté na mobilu/malých monitorech ===== */
 
-/* Kontejner: fixed na levém okraji, nehýbe se se scrollem */
+/* Boční rail – vždy fixed vůči viewportu (nehýbe se se scrollem) */
 .ad-rail-stack {
-  display: none;
-  position: fixed;
+  display: none !important;
+  position: fixed !important;
   top: 88px;
   left: 0;
+  bottom: auto;
   width: 168px;
   z-index: 40;
   pointer-events: auto;
@@ -16,18 +17,19 @@
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.15) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  transform: none !important;
+  will-change: auto;
 }
 
 .ad-rail-stack::-webkit-scrollbar {
   width: 4px;
 }
 .ad-rail-stack::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
-/* Jednotlivý panel */
 .ad-panel {
   width: 160px;
   min-height: 140px;
@@ -44,20 +46,65 @@
   overflow: hidden;
 }
 
-/* První panel vyšší (klasický skyscraper slot) */
 .ad-panel--tall {
   min-height: 280px;
 }
 
-/* Jen na širokých monitorech */
-@media (min-width: 1280px) {
+/*
+  Boční reklamy jen na opravdu širokých monitorech.
+  Obsah dostane padding-left, aby se s reklamami nepřekrýval.
+*/
+@media (min-width: 1400px) {
   .ad-rail-stack {
-    display: flex;
+    display: flex !important;
+  }
+
+  body {
+    padding-left: 176px;
+  }
+
+  .navbar {
+    /* navbar přes celou šířku včetně oblasti reklam */
+    margin-left: -176px;
+    padding-left: calc(176px + 60px);
+    width: calc(100% + 176px);
+    box-sizing: border-box;
   }
 }
 
-/* Spodní reklama pod obsahem */
+/* Tablet / menší desktop – žádné boční reklamy */
+@media (max-width: 1399px) {
+  .ad-rail-stack {
+    display: none !important;
+  }
+
+  body {
+    padding-left: 0 !important;
+  }
+}
+
+/* Mobil – boční reklamy pryč, spodní zmenšená a v toku stránky */
+@media (max-width: 768px) {
+  .ad-rail-stack {
+    display: none !important;
+  }
+
+  .ad-footer {
+    width: 94%;
+    margin: 28px auto 16px;
+    min-height: 70px;
+    padding: 8px 6px;
+  }
+
+  .ad-footer .ad-placeholder {
+    padding: 12px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Spodní reklama – v toku stránky (pod obsahem), nepřekrývá obsah */
 .ad-footer {
+  position: relative;
   width: min(728px, 92%);
   margin: 48px auto 24px;
   min-height: 100px;
@@ -71,6 +118,7 @@
   padding: 12px 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .ad-label {
