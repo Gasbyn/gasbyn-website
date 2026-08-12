@@ -6,6 +6,12 @@
   --hover-dur-fast: 0.75s;
 }
 
+a.logo {
+  text-decoration: none;
+  color: var(--orange, #ff8a00);
+  display: inline-block;
+}
+
 /* HOME cards – jemný náklon zůstává */
 .card,
 .youtube-card,
