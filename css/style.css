@@ -16,6 +16,7 @@ box-sizing:border-box;
 
 html {
 scroll-behavior: smooth;
+overflow-x: clip;
 }
 
 body {
@@ -29,7 +30,6 @@ transparent 40%
 ),
 var(--background);
 color:var(--white);
-overflow-x:hidden;
 }
 
 .navbar {
