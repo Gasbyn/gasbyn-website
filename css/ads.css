@@ -1,9 +1,11 @@
-/* ===== Google AdSense slots (family-friendly, discrete) ===== */
+/* ===== Google AdSense – pevný levý panel + spodní banner ===== */
 
+/* Levý panel – FIXED, nehýbe se se scrollem */
 .ad-rail {
   display: none;
   position: fixed;
-  top: 110px;
+  top: 100px;
+  left: 12px;
   width: 160px;
   z-index: 40;
   pointer-events: auto;
@@ -11,53 +13,56 @@
 
 .ad-rail-inner {
   width: 160px;
-  min-height: 200px;
-  max-height: calc(100vh - 140px);
+  min-height: 600px;
+  max-height: calc(100vh - 130px);
   overflow: hidden;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 6px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
-/* Jen na širokých monitorech – na telefonu/tabletu skryté */
+/* Jen na širokých monitorech (místo vedle obsahu) */
 @media (min-width: 1400px) {
   .ad-rail {
     display: block;
   }
   .ad-rail-left {
-    left: max(10px, calc((100vw - 1200px) / 2 - 180px));
-  }
-  .ad-rail-right {
-    right: max(10px, calc((100vw - 1200px) / 2 - 180px));
+    left: max(12px, calc((100vw - 1100px) / 2 - 190px));
   }
 }
 
+/* Spodní reklama pod obsahem (pod Kick / konec main) */
 .ad-footer {
   width: min(728px, 92%);
-  margin: 40px auto 20px;
-  min-height: 90px;
+  margin: 48px auto 24px;
+  min-height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 8px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 10px;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .ad-label {
   display: block;
   font-size: 10px;
-  letter-spacing: 0.5px;
-  color: #777;
+  letter-spacing: 0.6px;
+  color: #666;
   text-align: center;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .site-footer {
@@ -66,7 +71,7 @@
   color: #888;
   font-size: 13px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
 .site-footer a {
@@ -78,11 +83,16 @@
   text-decoration: underline;
 }
 
-/* Placeholder když ještě není AdSense kód */
+/* Placeholder než bude AdSense unit */
 .ad-placeholder {
   color: #555;
   font-size: 11px;
   text-align: center;
-  padding: 24px 8px;
-  line-height: 1.4;
+  padding: 28px 8px;
+  line-height: 1.45;
+  width: 100%;
+}
+
+.ad-footer .ad-placeholder {
+  padding: 20px 12px;
 }
