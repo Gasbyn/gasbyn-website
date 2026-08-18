@@ -2,7 +2,8 @@ name: Update social stats
 
 on:
   schedule:
-    - cron: "17 3 * * *"
+    # Každých 6 hodin (offset 17 min, ať neběží přesně zároveň s update videa)
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -59,7 +60,7 @@ jobs:
 
           now = datetime.now(timezone.utc).isoformat()
 
-          # YouTube channel statistics + latest public upload.
+          # YouTube – přesný počet do data.json (na webu se zaokrouhlí)
           yt_channel = get_json("https://www.youtube.com/@Gasbyn")
           if yt_channel and yt_channel.get("channel_follower_count") is not None:
               data.setdefault("youtube", {})["subscribers"] = int(yt_channel["channel_follower_count"])
@@ -80,8 +81,7 @@ jobs:
                       "thumbnail": video.get("thumbnail") or f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
                   }
 
-          # Kick channel follower count. Kick's public page extractor exposes the
-          # current follower count without putting an API secret in the website.
+          # Kick followers
           kick = get_json("https://kick.com/gasbyn")
           if kick and kick.get("channel_follower_count") is not None:
               data.setdefault("kick", {})["followers"] = int(kick["channel_follower_count"])
