@@ -36,16 +36,14 @@ function formatRoundedCount(value) {
     if (!Number.isFinite(number) || number < 0) {
         return "—";
     }
-    if (number >= 1000000) {
-        return `${Math.floor(number / 1000000)} mil.+`;
+    // Zaokrouhlení dolů na desítky: 2147 → 2140, 783 → 780
+    const rounded = Math.floor(number / 10) * 10;
+    if (rounded >= 1000) {
+        const str = String(rounded);
+        const withSpace = str.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return withSpace + "+";
     }
-    if (number >= 1000) {
-        return `${Math.floor(number / 1000)} 000+`;
-    }
-    if (number >= 100) {
-        return `${Math.floor(number / 100) * 100}+`;
-    }
-    return `${number}+`;
+    return rounded + "+";
 }
 
 
