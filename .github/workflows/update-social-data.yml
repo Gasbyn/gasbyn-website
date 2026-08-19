@@ -2,7 +2,6 @@ name: Update social stats
 
 on:
   schedule:
-    # Každých 6 hodin (offset 17 min, ať neběží přesně zároveň s update videa)
     - cron: "17 */6 * * *"
   workflow_dispatch:
 
@@ -22,16 +21,22 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install yt-dlp
-        run: python -m pip install --upgrade yt-dlp
+      - name: Install dependencies
+        run: python -m pip install --upgrade yt-dlp requests
 
       - name: Update data.json
         shell: python
         run: |
           import json
+          import re
           import subprocess
           from datetime import datetime, timezone
           from pathlib import Path
+
+          try:
+              import requests
+          except ImportError:
+              requests = None
 
           DATA = Path("data.json")
 
@@ -40,34 +45,95 @@ jobs:
           except Exception:
               data = {
                   "youtube": {"subscribers": 2000, "latestVideo": {}},
-                  "kick": {"followers": 700}
+                  "kick": {"followers": 700},
               }
 
-          def get_json(url, extra=None):
-              args = ["python", "-m", "yt_dlp", "--dump-single-json", "--skip-download", "--no-warnings", "--quiet"]
+          def parse_abbrev_count(text):
+              if not text:
+                  return None
+              text = text.strip().replace("\xa0", " ").replace(",", "")
+              m = re.search(r"([\d]+(?:\.[\d]+)?)\s*([KMBkmb])", text)
+              if m:
+                  n = float(m.group(1))
+                  mult = {"K": 1000, "M": 1_000_000, "B": 1_000_000_000}[m.group(2).upper()]
+                  return int(round(n * mult))
+              m = re.search(r"([\d\s]+)", text)
+              if m:
+                  digits = re.sub(r"\D", "", m.group(1))
+                  if digits:
+                      return int(digits)
+              return None
+
+          def get_ytdlp_json(url, extra=None):
+              args = [
+                  "python", "-m", "yt_dlp",
+                  "--dump-single-json", "--skip-download",
+                  "--no-warnings", "--quiet",
+              ]
               if extra:
                   args.extend(extra)
               args.append(url)
               try:
                   result = subprocess.run(args, capture_output=True, text=True, timeout=120)
                   if result.returncode != 0:
-                      print(f"yt-dlp failed for {url}: {result.stderr[-500:]}")
+                      print(f"yt-dlp failed for {url}: {(result.stderr or '')[-400:]}")
                       return None
                   return json.loads(result.stdout)
               except Exception as exc:
                   print(f"Could not read {url}: {exc}")
                   return None
 
+          def scrape_youtube_subscribers():
+              """Parse public channel page for e.g. '2.12K subscribers'."""
+              if not requests:
+                  return None
+              try:
+                  r = requests.get(
+                      "https://www.youtube.com/@Gasbyn",
+                      headers={
+                          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                          "Accept-Language": "en-US,en;q=0.9",
+                      },
+                      timeout=30,
+                  )
+                  r.raise_for_status()
+                  html = r.text
+              except Exception as exc:
+                  print(f"YouTube page fetch failed: {exc}")
+                  return None
+
+              patterns = [
+                  r'"content":"([^"]*subscribers?)"',
+                  r'"accessibilityLabel":"([^"]*subscriber[^"]*)"',
+                  r'([\d.]+\s*[KMB])\s*subscribers',
+                  r'([\d.\s]+)\s*odběratel',
+              ]
+              for pat in patterns:
+                  m = re.search(pat, html, re.I)
+                  if m:
+                      count = parse_abbrev_count(m.group(1))
+                      if count and count > 0:
+                          print(f"YouTube scrape matched {pat!r} -> {count}")
+                          return count
+              print("YouTube scrape: no subscriber pattern found")
+              return None
+
           now = datetime.now(timezone.utc).isoformat()
 
-          # YouTube – přesný počet do data.json (na webu se zaokrouhlí)
-          yt_channel = get_json("https://www.youtube.com/@Gasbyn")
-          if yt_channel and yt_channel.get("channel_follower_count") is not None:
-              data.setdefault("youtube", {})["subscribers"] = int(yt_channel["channel_follower_count"])
+          # --- YouTube subscribers (prefer page scrape over rounded yt-dlp) ---
+          yt_subs = scrape_youtube_subscribers()
+          if yt_subs is None:
+              yt_channel = get_ytdlp_json("https://www.youtube.com/@Gasbyn")
+              if yt_channel and yt_channel.get("channel_follower_count") is not None:
+                  yt_subs = int(yt_channel["channel_follower_count"])
+                  print(f"YouTube yt-dlp channel_follower_count -> {yt_subs}")
+          if yt_subs is not None:
+              data.setdefault("youtube", {})["subscribers"] = yt_subs
 
-          yt_video = get_json(
+          # --- Latest video ---
+          yt_video = get_ytdlp_json(
               "https://www.youtube.com/@Gasbyn/videos",
-              ["--playlist-items", "1"]
+              ["--playlist-items", "1"],
           )
           if yt_video:
               video = yt_video
@@ -78,17 +144,25 @@ jobs:
                   data.setdefault("youtube", {})["latestVideo"] = {
                       "id": video_id,
                       "title": video.get("title") or "Nejnovější video",
-                      "thumbnail": video.get("thumbnail") or f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
+                      "thumbnail": video.get("thumbnail")
+                      or f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg",
                   }
 
-          # Kick followers
-          kick = get_json("https://kick.com/gasbyn")
+          # --- Kick followers ---
+          kick = get_ytdlp_json("https://kick.com/gasbyn")
           if kick and kick.get("channel_follower_count") is not None:
               data.setdefault("kick", {})["followers"] = int(kick["channel_follower_count"])
+              print(f"Kick yt-dlp -> {kick['channel_follower_count']}")
+          else:
+              print("Kick count unavailable this run (kept previous value)")
 
           data.setdefault("youtube", {})["updatedAt"] = now
           data.setdefault("kick", {})["updatedAt"] = now
           DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print("Saved:", json.dumps({
+              "youtube_subscribers": data.get("youtube", {}).get("subscribers"),
+              "kick_followers": data.get("kick", {}).get("followers"),
+          }))
 
       - name: Commit updated data
         run: |
