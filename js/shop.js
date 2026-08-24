@@ -8,7 +8,7 @@ const products = [
         description: "Dostaneš od Gasbyna 200 V-Bucks.",
         status: "Cena: NEAKTIVNÍ",
         image: "assets/images/200-Vbucks.png",
-        code: "!shop buy 200vbucks"
+        code: "!buy 200vbucks"
     },
 
     {
@@ -16,7 +16,7 @@ const products = [
         description: "Vybereš Gasbynovy Challenge na jednu hru. Neplatí pro Cupy a Tournamenty.",
         status: "Cena: 1000 Granulek",
         image: "assets/images/Challenge.png",
-        code: "!shop buy challenge"
+        code: "!buy challenge"
     },
 
    {
@@ -24,7 +24,7 @@ const products = [
         description: "Gasbyn udělá 10 dřepů na streamu.",
         status: "Cena: 500 Granulek",
         image: "assets/images/10drepu.png",
-        code: "!shop buy 10drepu"
+        code: "!buy 10drepu"
     },
 
     {
@@ -32,7 +32,7 @@ const products = [
         description: "Gasbyn připomene na Streamu na SAC.",
         status: "Cena: 100 Granulek",
         image: "assets/images/SAC.png",
-        code: "!shop buy SAC"
+        code: "!buy SAC"
     }
 
 ];
