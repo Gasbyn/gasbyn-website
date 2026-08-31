@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Oficiální Gasbyn merch – trička, mikiny, samolepky. Objednávka, doprava CZ/SK a platba.">
+<meta name="description" content="Oficiální Gasbyn merch – brzy v prodeji. Trička, mikiny a doplňky pro komunitu.">
 <title>Merch | Gasbyn</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/merch.css">
@@ -25,104 +25,56 @@
 </nav>
 </header>
 
-<main>
-<section class="merch-store">
-<div class="merch-store-head reveal">
-<h1>👕 Gasbyn Merch</h1>
-<p>Oficiální merch pro komunitu. Vyber produkt, velikost, přidej do košíku a dokonči objednávku včetně dopravy do Česka nebo na Slovensko.</p>
-</div>
-
-<section class="merch-grid" id="merchGrid"></section>
-
-<section class="merch-info reveal delay-2">
-<h2>Jak objednávka funguje</h2>
-<ol>
-<li>Vyber produkt (u oblečení i velikost) a přidej do košíku.</li>
-<li>Vyplň doručovací údaje a způsob dopravy – cena dopravy se přičte automaticky.</li>
-<li>Zaplať převodem podle platebních údajů na konci objednávky (VS = číslo objednávky).</li>
-<li>Po připsání platby objednávku zpracuji a odešlu. Stav můžeš ověřit na Discordu nebo e-mailem.</li>
-</ol>
-<p><strong>Doprava:</strong> Česko a Slovensko – výdejní místo / box nebo doručení na adresu. Při objednávce nad 1&nbsp;500&nbsp;Kč je doprava zdarma.</p>
-<p><strong>Vrácení:</strong> U oblečení je možné vrácení do 14 dnů v původním stavu (detaily pošlu s potvrzením objednávky).</p>
+<main class="merch-page">
+<section class="merch-hero reveal">
+<div class="merch-icon">👕</div>
+<h1>Merch</h1>
+<p class="merch-status">Brzy v prodeji</p>
+<p class="merch-description">Oficiální merch zatím není dostupný. Připravuju kolekci pro komunitu – až bude hotová, najdeš ji tady a uslyšíš o tom na streamu i na sociálních sítích.</p>
 </section>
+
+<section class="merch-soon-info container reveal delay-1">
+<h2>Co chystám</h2>
+<ul>
+<li>Trička a mikiny s logem Gasbyn</li>
+<li>Designy inspirované streamy a komunitou</li>
+<li>Případně samolepky a další drobnosti</li>
+</ul>
+<p>Nechci spouštět prodej narychlo. Až bude vše připravené (včetně platby a dopravy), stránku aktualizuju.</p>
+
+<h2>Jak se to dozvíš</h2>
+<ul>
+<li><strong>Kick</strong> – oznámení na LIVE</li>
+<li><strong>Discord</strong> – zpráva v komunitě</li>
+<li><strong>Instagram / TikTok / YouTube</strong></li>
+<li>Tato stránka</li>
+</ul>
+
+<p class="merch-soon-note">Mezitím můžeš podpořit stream přes <a href="shop.html">Kick Shop</a> (granulky při LIVE) nebo sledováním na <a href="https://kick.com/Gasbyn" target="_blank" rel="noopener">Kicku</a> a <a href="https://www.youtube.com/@Gasbyn" target="_blank" rel="noopener">YouTube</a>.</p>
 </section>
 </main>
-
-<button class="merch-cart-button" id="openCart" type="button" aria-label="Otevřít košík">
-🛒 Košík <span class="merch-cart-count" id="cartCount">0</span>
-</button>
-
-<div class="merch-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-<div class="merch-modal">
-<button class="merch-close" id="closeCart" type="button" aria-label="Zavřít">×</button>
-<h2 id="cartTitle">🛒 Košík</h2>
-<div id="cartItems"></div>
-<div class="merch-totals">
-<div class="merch-total-row"><span>Mezisoučet</span><span id="cartSubtotal">0 Kč</span></div>
-</div>
-<button class="merch-checkout" id="checkoutButton" type="button">Pokračovat k objednávce</button>
-</div>
-</div>
-
-<div class="merch-overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
-<div class="merch-modal">
-<button class="merch-close" id="closeCheckout" type="button" aria-label="Zavřít">×</button>
-<h2 id="checkoutTitle">📦 Objednávka a doprava</h2>
-<form class="merch-form" id="checkoutForm">
-<label>Jméno a příjmení<input name="name" required autocomplete="name" placeholder="Jan Novák"></label>
-<label>E-mail<input type="email" name="email" required autocomplete="email" placeholder="jan@email.cz"></label>
-<label>Telefon<input type="tel" name="phone" required autocomplete="tel" placeholder="+420 …"></label>
-<label>Stát
-<select name="country" id="country" required>
-<option value="">Vyber stát</option>
-<option value="CZ">🇨🇿 Česko</option>
-<option value="SK">🇸🇰 Slovensko</option>
-</select>
-</label>
-<label>Ulice a číslo<input name="address" required autocomplete="street-address" placeholder="Hlavní 12"></label>
-<label>Město<input name="city" required autocomplete="address-level2" placeholder="Praha"></label>
-<label>PSČ<input name="zip" required autocomplete="postal-code" placeholder="110 00"></label>
-<label>Způsob doručení
-<select name="shipping" id="shipping" required>
-<option value="">Nejdřív vyber stát</option>
-</select>
-</label>
-<label>Poznámka (volitelné)<textarea name="note" rows="2" placeholder="Např. preferované výdejní místo"></textarea></label>
-
-<div class="merch-totals">
-<div class="merch-total-row"><span>Mezisoučet produktů</span><span id="checkoutSubtotal">0 Kč</span></div>
-<div class="merch-total-row"><span>Doprava</span><span id="checkoutShipping">0 Kč</span></div>
-<div class="merch-total-row merch-total-final"><span>Celkem k platbě</span><span id="checkoutTotal">0 Kč</span></div>
-</div>
-
-<button type="submit" class="merch-checkout">Dokončit objednávku a zobrazit platbu</button>
-</form>
-<p class="merch-note">Po odeslání formuláře dostaneš platební údaje (převod). Kartová platba online se napojí později přes platební bránu (např. Stripe / Comgate).</p>
-</div>
-</div>
-
-<div class="merch-overlay" id="paymentOverlay" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
-<div class="merch-modal">
-<button class="merch-close" id="closePayment" type="button" aria-label="Zavřít">×</button>
-<h2 id="paymentTitle">💳 Platba převodem</h2>
-<div class="merch-payment-box">
-<p>Objednávka <strong id="orderId">—</strong> je připravená. Zaplať prosím:</p>
-<div class="merch-pay-row"><span>Částka</span><strong id="payAmount">0 Kč</strong></div>
-<div class="merch-pay-row"><span>Účet</span><strong id="payAccount">————— / 0000</strong></div>
-<div class="merch-pay-row"><span>Variabilní symbol</span><strong id="payVS">—</strong></div>
-<div class="merch-pay-row"><span>Zpráva pro příjemce</span><strong id="payMsg">Gasbyn merch</strong></div>
-<p class="merch-note">Po připsání platby ti pošlu potvrzení na e-mail. Dokud nedorazí platba, objednávka se neoříšle. Platební údaje si můžeš zkopírovat nebo upravit v <code>js/merch.js</code> (BANK).</p>
-<button type="button" class="merch-checkout" id="copyPayment">📋 Zkopírovat platební údaje</button>
-<button type="button" class="merch-secondary" id="closePaymentDone">Hotovo</button>
-</div>
-</div>
-</div>
 
 <footer class="site-footer">
 <p>© Gasbyn · <a href="privacy.html">Ochrana soukromí</a> · <a href="contact.html">Kontakt</a></p>
 </footer>
 
-<div id="merchToast" class="merch-toast" role="status" aria-live="polite"></div>
-<script src="js/merch.js"></script>
+<script>
+(function () {
+  var nodes = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    nodes.forEach(function (n) { n.classList.add("show"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("show");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  nodes.forEach(function (n) { io.observe(n); });
+})();
+</script>
 </body>
 </html>
