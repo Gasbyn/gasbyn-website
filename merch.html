@@ -3,46 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Oficiální Gasbyn merch – trička, mikiny a samolepky.">
+<meta name="description" content="Oficiální Gasbyn merch – trička, mikiny, samolepky. Objednávka, doprava CZ/SK a platba.">
 <title>Merch | Gasbyn</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/merch.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
 <script src="js/favicon.js"></script>
-<style>
-.merch-store{width:min(1200px,92%);margin:0 auto;padding:70px 0 90px;text-align:left}
-.merch-store-head{text-align:center;margin-bottom:45px}
-.merch-store-head h1{margin:0;color:var(--orange);font-size:56px}
-.merch-store-head p{color:var(--gray);font-size:18px;line-height:1.7;max-width:700px;margin:15px auto 0}
-.merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
-.merch-product{background:linear-gradient(180deg,#232323,#1b1b1b);border:1px solid rgba(255,255,255,.05);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;transition:transform .7s cubic-bezier(.22,1,.36,1),box-shadow .7s ease,border-color .6s ease}
-.merch-product:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 45px rgba(255,138,0,.18);border-color:rgba(255,138,0,.2)}
-.merch-product-visual{height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,rgba(255,138,0,.13),transparent 65%);font-size:92px}
-.merch-product-info{padding:24px;text-align:left}
-.merch-product-info h2{margin:0 0 8px;color:var(--white);font-size:25px}
-.merch-product-info p{margin:0 0 18px;color:var(--gray);line-height:1.6}
-.merch-price{font-size:24px;font-weight:800;color:var(--orange);margin-bottom:18px}
-.merch-size{width:100%;padding:12px 14px;background:#111;color:white;border:1px solid rgba(255,255,255,.12);border-radius:10px;font-size:15px;margin-bottom:12px}
-.merch-add{width:100%;border:0;cursor:pointer;padding:13px 18px;background:var(--orange);color:white;border-radius:10px;font-size:16px;font-weight:700;transition:transform .4s ease,box-shadow .4s ease}
-.merch-add:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 25px rgba(255,138,0,.3)}
-.merch-cart-button{position:fixed;right:25px;bottom:25px;z-index:1000;border:0;cursor:pointer;background:var(--orange);color:white;border-radius:14px;padding:14px 20px;font-size:16px;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.4)}
-.merch-cart-count{display:inline-flex;min-width:24px;height:24px;padding:0 6px;align-items:center;justify-content:center;border-radius:50%;background:#111;margin-left:7px}
-.merch-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:1100;padding:20px;align-items:center;justify-content:center}
-.merch-overlay.open{display:flex}
-.merch-modal{width:min(720px,100%);max-height:90vh;overflow:auto;background:#151515;border:1px solid rgba(255,140,0,.18);border-radius:22px;box-shadow:0 25px 70px rgba(0,0,0,.55);padding:30px}
-.merch-modal h2{margin:0 0 20px;color:var(--orange);font-size:32px}
-.merch-close{float:right;border:0;background:transparent;color:#aaa;font-size:28px;cursor:pointer}
-.merch-cart-item{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.merch-cart-item strong{color:white}.merch-cart-item small{color:var(--gray)}
-.merch-remove{border:0;background:#2a2a2a;color:#ddd;border-radius:8px;padding:8px 10px;cursor:pointer}
-.merch-total{display:flex;justify-content:space-between;font-size:22px;font-weight:800;color:white;padding:20px 0}
-.merch-checkout{border:0;cursor:pointer;width:100%;padding:14px 18px;border-radius:10px;background:var(--orange);color:white;font-size:17px;font-weight:800}
-.merch-note{margin-top:15px;color:var(--gray);font-size:13px;line-height:1.6}
-.merch-form{display:grid;gap:13px}.merch-form label{color:#ddd;font-size:14px;font-weight:600}.merch-form input,.merch-form select{width:100%;margin-top:6px;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#111;color:white;font-size:15px}
-.merch-shipping-box{padding:15px;background:#1d1d1d;border-radius:12px;margin-top:8px}.merch-success{text-align:center;padding:20px 0}.merch-success .icon{font-size:58px}.merch-success h3{color:white;font-size:26px}.merch-success p{color:var(--gray);line-height:1.7}
-@media(max-width:600px){.merch-store{padding-top:45px}.merch-store-head h1{font-size:42px}.merch-product-visual{height:210px}.merch-cart-button{right:15px;bottom:15px}.merch-modal{padding:22px}}
-</style>
 </head>
 <body>
 <header>
@@ -58,113 +25,96 @@
 </nav>
 </header>
 
-<main class="merch-store">
-<section class="merch-store-head">
-<h1>Merch Gasbyn</h1>
-<p>Oficiální Gasbyn merch. Vyber si produkt, přidej ho do košíku a pokračuj k objednávce. 🚀</p>
+<main>
+<section class="merch-store">
+<div class="merch-store-head reveal">
+<h1>👕 Gasbyn Merch</h1>
+<p>Oficiální merch pro komunitu. Vyber produkt, velikost, přidej do košíku a dokonči objednávku včetně dopravy do Česka nebo na Slovensko.</p>
+</div>
+
+<section class="merch-grid" id="merchGrid"></section>
+
+<section class="merch-info reveal delay-2">
+<h2>Jak objednávka funguje</h2>
+<ol>
+<li>Vyber produkt (u oblečení i velikost) a přidej do košíku.</li>
+<li>Vyplň doručovací údaje a způsob dopravy – cena dopravy se přičte automaticky.</li>
+<li>Zaplať převodem podle platebních údajů na konci objednávky (VS = číslo objednávky).</li>
+<li>Po připsání platby objednávku zpracuji a odešlu. Stav můžeš ověřit na Discordu nebo e-mailem.</li>
+</ol>
+<p><strong>Doprava:</strong> Česko a Slovensko – výdejní místo / box nebo doručení na adresu. Při objednávce nad 1&nbsp;500&nbsp;Kč je doprava zdarma.</p>
+<p><strong>Vrácení:</strong> U oblečení je možné vrácení do 14 dnů v původním stavu (detaily pošlu s potvrzením objednávky).</p>
 </section>
-
-<section class="merch-grid" aria-label="Produkty">
-<article class="merch-product">
-<div class="merch-product-visual">👕</div>
-<div class="merch-product-info">
-<h2>Gasbyn Tričko</h2>
-<p>Oficiální tričko Gasbyn.</p>
-<div class="merch-price">499 Kč</div>
-<select class="merch-size" data-size="true" aria-label="Velikost trička">
-<option value="">Vyber velikost</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-</select>
-<button class="merch-add" data-name="Gasbyn Tričko" data-price="499" data-size-required="true">Přidat do košíku</button>
-</div>
-</article>
-
-<article class="merch-product">
-<div class="merch-product-visual">🧥</div>
-<div class="merch-product-info">
-<h2>Gasbyn Mikina</h2>
-<p>Oficiální mikina Gasbyn.</p>
-<div class="merch-price">899 Kč</div>
-<select class="merch-size" data-size="true" aria-label="Velikost mikiny">
-<option value="">Vyber velikost</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-</select>
-<button class="merch-add" data-name="Gasbyn Mikina" data-price="899" data-size-required="true">Přidat do košíku</button>
-</div>
-</article>
-
-<article class="merch-product">
-<div class="merch-product-visual">🏷️</div>
-<div class="merch-product-info">
-<h2>Gasbyn Samolepky #1</h2>
-<p>Samolepkový pack Gasbyn.</p>
-<div class="merch-price">99 Kč</div>
-<button class="merch-add" data-name="Gasbyn Samolepky #1" data-price="99">Přidat do košíku</button>
-</div>
-</article>
-
-<article class="merch-product">
-<div class="merch-product-visual">🏷️</div>
-<div class="merch-product-info">
-<h2>Gasbyn Samolepky #2</h2>
-<p>Druhý samolepkový pack Gasbyn.</p>
-<div class="merch-price">99 Kč</div>
-<button class="merch-add" data-name="Gasbyn Samolepky #2" data-price="99">Přidat do košíku</button>
-</div>
-</article>
-
-<article class="merch-product">
-<div class="merch-product-visual">🧢</div>
-<div class="merch-product-info">
-<h2>Gasbyn Kšiltovka</h2>
-<p>Jednoduchý doplněk s Gasbyn brandingem.</p>
-<div class="merch-price">399 Kč</div>
-<button class="merch-add" data-name="Gasbyn Kšiltovka" data-price="399">Přidat do košíku</button>
-</div>
-</article>
 </section>
-
-<p class="merch-note" style="max-width:760px;margin:35px auto 0;text-align:center;">⚠️ Ceny, doprava, platební metoda a skutečné zpracování objednávek jsou zatím připravené jako návrh. Před spuštěním prodeje se napojí skutečný platební a objednávkový systém.</p>
 </main>
 
-<button class="merch-cart-button" id="openCart" aria-label="Otevřít košík">🛒 Košík <span class="merch-cart-count" id="cartCount">0</span></button>
+<button class="merch-cart-button" id="openCart" type="button" aria-label="Otevřít košík">
+🛒 Košík <span class="merch-cart-count" id="cartCount">0</span>
+</button>
 
-<div class="merch-overlay" id="cartOverlay">
+<div class="merch-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
 <div class="merch-modal">
-<button class="merch-close" id="closeCart" aria-label="Zavřít">×</button>
-<h2>🛒 Košík</h2>
+<button class="merch-close" id="closeCart" type="button" aria-label="Zavřít">×</button>
+<h2 id="cartTitle">🛒 Košík</h2>
 <div id="cartItems"></div>
-<div class="merch-total"><span>Mezisoučet</span><span id="cartTotal">0 Kč</span></div>
-<button class="merch-checkout" id="checkoutButton">Pokračovat k objednávce</button>
-<p class="merch-note">Doprava se zde zatím nezapočítává. V ostré verzi se po výběru Česka/Slovenska a způsobu doručení přičte aktuální cena dopravy.</p>
+<div class="merch-totals">
+<div class="merch-total-row"><span>Mezisoučet</span><span id="cartSubtotal">0 Kč</span></div>
+</div>
+<button class="merch-checkout" id="checkoutButton" type="button">Pokračovat k objednávce</button>
 </div>
 </div>
 
-<div class="merch-overlay" id="checkoutOverlay">
+<div class="merch-overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
 <div class="merch-modal">
-<button class="merch-close" id="closeCheckout" aria-label="Zavřít">×</button>
-<h2>📦 Objednávka</h2>
+<button class="merch-close" id="closeCheckout" type="button" aria-label="Zavřít">×</button>
+<h2 id="checkoutTitle">📦 Objednávka a doprava</h2>
 <form class="merch-form" id="checkoutForm">
-<label>Jméno a příjmení<input name="name" required autocomplete="name"></label>
-<label>E-mail<input type="email" name="email" required autocomplete="email"></label>
-<label>Stát<select name="country" id="country" required><option value="">Vyber stát</option><option value="CZ">🇨🇿 Česko</option><option value="SK">🇸🇰 Slovensko</option></select></label>
-<label>Adresa<input name="address" required autocomplete="street-address"></label>
-<label>Město<input name="city" required autocomplete="address-level2"></label>
-<label>PSČ<input name="zip" required autocomplete="postal-code"></label>
-<div class="merch-shipping-box">
-<label>Způsob doručení<select name="shipping" id="shipping" required><option value="">Nejdřív vyber stát</option></select></label>
+<label>Jméno a příjmení<input name="name" required autocomplete="name" placeholder="Jan Novák"></label>
+<label>E-mail<input type="email" name="email" required autocomplete="email" placeholder="jan@email.cz"></label>
+<label>Telefon<input type="tel" name="phone" required autocomplete="tel" placeholder="+420 …"></label>
+<label>Stát
+<select name="country" id="country" required>
+<option value="">Vyber stát</option>
+<option value="CZ">🇨🇿 Česko</option>
+<option value="SK">🇸🇰 Slovensko</option>
+</select>
+</label>
+<label>Ulice a číslo<input name="address" required autocomplete="street-address" placeholder="Hlavní 12"></label>
+<label>Město<input name="city" required autocomplete="address-level2" placeholder="Praha"></label>
+<label>PSČ<input name="zip" required autocomplete="postal-code" placeholder="110 00"></label>
+<label>Způsob doručení
+<select name="shipping" id="shipping" required>
+<option value="">Nejdřív vyber stát</option>
+</select>
+</label>
+<label>Poznámka (volitelné)<textarea name="note" rows="2" placeholder="Např. preferované výdejní místo"></textarea></label>
+
+<div class="merch-totals">
+<div class="merch-total-row"><span>Mezisoučet produktů</span><span id="checkoutSubtotal">0 Kč</span></div>
+<div class="merch-total-row"><span>Doprava</span><span id="checkoutShipping">0 Kč</span></div>
+<div class="merch-total-row merch-total-final"><span>Celkem k platbě</span><span id="checkoutTotal">0 Kč</span></div>
 </div>
-<div class="merch-total"><span>Celkem</span><span id="checkoutTotal">0 Kč</span></div>
-<button type="submit" class="merch-checkout">Přejít k platbě</button>
+
+<button type="submit" class="merch-checkout">Dokončit objednávku a zobrazit platbu</button>
 </form>
-<p class="merch-note">Toto je zatím pouze připravené demo checkoutu. Po výběru skutečné platební brány a dopravy se tlačítko napojí na reálnou platbu a objednávku.</p>
+<p class="merch-note">Po odeslání formuláře dostaneš platební údaje (převod). Kartová platba online se napojí později přes platební bránu (např. Stripe / Comgate).</p>
 </div>
 </div>
 
-<div class="merch-overlay" id="successOverlay">
-<div class="merch-modal merch-success">
-<div class="icon">✅</div>
-<h3>Checkout je připraven</h3>
-<p>Reálná objednávka se zde zatím neodesílá. Až vybereme platební bránu, dopravu a způsob zpracování objednávek, toto místo se napojí na skutečný checkout.</p>
-<button class="merch-checkout" id="closeSuccess">Zpět na merch</button>
+<div class="merch-overlay" id="paymentOverlay" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+<div class="merch-modal">
+<button class="merch-close" id="closePayment" type="button" aria-label="Zavřít">×</button>
+<h2 id="paymentTitle">💳 Platba převodem</h2>
+<div class="merch-payment-box">
+<p>Objednávka <strong id="orderId">—</strong> je připravená. Zaplať prosím:</p>
+<div class="merch-pay-row"><span>Částka</span><strong id="payAmount">0 Kč</strong></div>
+<div class="merch-pay-row"><span>Účet</span><strong id="payAccount">————— / 0000</strong></div>
+<div class="merch-pay-row"><span>Variabilní symbol</span><strong id="payVS">—</strong></div>
+<div class="merch-pay-row"><span>Zpráva pro příjemce</span><strong id="payMsg">Gasbyn merch</strong></div>
+<p class="merch-note">Po připsání platby ti pošlu potvrzení na e-mail. Dokud nedorazí platba, objednávka se neoříšle. Platební údaje si můžeš zkopírovat nebo upravit v <code>js/merch.js</code> (BANK).</p>
+<button type="button" class="merch-checkout" id="copyPayment">📋 Zkopírovat platební údaje</button>
+<button type="button" class="merch-secondary" id="closePaymentDone">Hotovo</button>
+</div>
 </div>
 </div>
 
@@ -172,54 +122,7 @@
 <p>© Gasbyn · <a href="privacy.html">Ochrana soukromí</a> · <a href="contact.html">Kontakt</a></p>
 </footer>
 
-<script>
-const cart=[];
-const cartOverlay=document.getElementById('cartOverlay');
-const checkoutOverlay=document.getElementById('checkoutOverlay');
-const successOverlay=document.getElementById('successOverlay');
-const cartItems=document.getElementById('cartItems');
-const cartTotal=document.getElementById('cartTotal');
-const checkoutTotal=document.getElementById('checkoutTotal');
-const cartCount=document.getElementById('cartCount');
-
-function formatCZK(value){return value.toLocaleString('cs-CZ')+' Kč';}
-function renderCart(){
- cartItems.innerHTML='';
- if(!cart.length){cartItems.innerHTML='<p style="color:var(--gray);line-height:1.7">Košík je zatím prázdný. Vyber si něco z nabídky. 👕</p>';}
- cart.forEach((item,index)=>{
-  const row=document.createElement('div'); row.className='merch-cart-item';
-  row.innerHTML='<div><strong>'+item.name+'</strong><br><small>'+(item.size?'Velikost: '+item.size+' · ':'')+formatCZK(item.price)+'</small></div><button class="merch-remove" data-remove="'+index+'">Odebrat</button>';
-  cartItems.appendChild(row);
- });
- const total=cart.reduce((sum,item)=>sum+item.price,0);
- cartTotal.textContent=formatCZK(total); checkoutTotal.textContent=formatCZK(total);
- cartCount.textContent=cart.length;
- document.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>{cart.splice(Number(btn.dataset.remove),1);renderCart();}));
-}
-
-document.querySelectorAll('.merch-add').forEach(button=>button.addEventListener('click',()=>{
- const product=button.closest('.merch-product');
- const sizeSelect=product.querySelector('[data-size]');
- const size=sizeSelect?sizeSelect.value:'';
- if(button.dataset.sizeRequired==='true'&&!size){alert('Nejdřív vyber velikost.');return;}
- cart.push({name:button.dataset.name,price:Number(button.dataset.price),size});
- renderCart();
- cartOverlay.classList.add('open');
-}));
-
-document.getElementById('openCart').addEventListener('click',()=>{renderCart();cartOverlay.classList.add('open');});
-document.getElementById('closeCart').addEventListener('click',()=>cartOverlay.classList.remove('open'));
-document.getElementById('checkoutButton').addEventListener('click',()=>{if(!cart.length){alert('Košík je prázdný.');return;}cartOverlay.classList.remove('open');checkoutOverlay.classList.add('open');renderCart();});
-document.getElementById('closeCheckout').addEventListener('click',()=>checkoutOverlay.classList.remove('open'));
-document.getElementById('closeSuccess').addEventListener('click',()=>successOverlay.classList.remove('open'));
-
-document.getElementById('country').addEventListener('change',function(){
- const shipping=document.getElementById('shipping');
- shipping.innerHTML=this.value==='CZ'?'<option value="cz-box">📦 Výdejní místo / box</option><option value="cz-home">🏠 Doručení na adresu</option>':this.value==='SK'?'<option value="sk-box">📦 Výdejní místo / box</option><option value="sk-home">🏠 Doručení na adresu</option>':'<option value="">Nejdřív vyber stát</option>';
-});
-
-document.getElementById('checkoutForm').addEventListener('submit',function(event){event.preventDefault();checkoutOverlay.classList.remove('open');successOverlay.classList.add('open');});
-renderCart();
-</script>
+<div id="merchToast" class="merch-toast" role="status" aria-live="polite"></div>
+<script src="js/merch.js"></script>
 </body>
 </html>
