@@ -1,256 +1,215 @@
-/* ===== CONTACT ===== */
-
 .contact-page {
-    min-height: calc(100vh - 80px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 80px 20px;
+  padding: 50px 20px 80px;
+  min-height: calc(100vh - 80px);
 }
 
-
-.contact-card {
-    width: 100%;
-    max-width: 700px;
-
-    padding: 55px 45px;
-
-    background: #151515;
-
-    border: 1px solid rgba(255, 140, 0, 0.15);
-
-    border-radius: 24px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
-
-    text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
+.contact-wrap {
+  width: min(860px, 100%);
+  margin: 0 auto;
 }
 
-
-/* Oranžová čára nahoře */
-
-.contact-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 4px;
-
-    background: #ff8c00;
+.contact-hero {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
-
-/* Ikona */
-
-.contact-icon {
-    font-size: 55px;
-
-    margin-bottom: 10px;
+.contact-eyebrow {
+  margin: 0 0 8px;
+  color: var(--orange, #ff8a00);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-
-/* Nadpis */
-
-.contact-card h1 {
-    margin: 0;
-
-    color: #ff8c00;
-
-    font-size: 52px;
-
-    font-weight: 800;
+.contact-hero h1 {
+  margin: 0;
+  color: var(--orange, #ff8c00);
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-weight: 800;
 }
-
-
-/* Úvod */
 
 .contact-intro {
-    margin: 15px 0 35px;
-
-    color: #d0d0d0;
-
-    font-size: 19px;
+  margin: 12px auto 0;
+  max-width: 420px;
+  color: var(--gray, #bdbdbd);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
-
-/* ===== TLAČÍTKA ===== */
-
-.contact-options {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 14px;
+/* Kanály – 2×2 grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
 }
-
 
 .contact-option {
-    display: flex;
-
-    align-items: center;
-
-    gap: 16px;
-
-    padding: 16px 20px;
-
-    background: #202020;
-
-    border: 1px solid rgba(255, 255, 255, 0.06);
-
-    border-radius: 14px;
-
-    color: white;
-
-    text-decoration: none;
-
-    text-align: left;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px 18px 16px;
+  background: linear-gradient(180deg, #222, #1a1a1a);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  transition:
+    transform var(--hover-dur-fast, 0.75s) var(--hover-ease, cubic-bezier(.22, 1, .36, 1)),
+    box-shadow 0.4s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
 }
-
 
 .contact-option:hover {
-    transform: translateY(-3px);
-
-transform: scale(1.08);
-    
-    background: #252525;
-
-    border-color: rgba(255, 140, 0, 0.4);
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 140, 0, 0.35);
+  box-shadow: 0 14px 32px rgba(255, 138, 0, 0.12);
+  background: linear-gradient(180deg, #262626, #1c1c1c);
 }
-
-
-/* Ikona tlačítka */
 
 .contact-option-icon {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    background: rgba(255, 140, 0, 0.12);
-
-    border-radius: 11px;
-
-    font-size: 22px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 140, 0, 0.12);
+  border-radius: 12px;
+  font-size: 22px;
 }
 
-
-/* Název */
+.contact-option-text {
+  flex: 1;
+  min-width: 0;
+}
 
 .contact-option strong {
-    display: block;
-
-    color: white;
-
-    font-size: 17px;
-
-    margin-bottom: 3px;
+  display: block;
+  color: white;
+  font-size: 1.05rem;
+  margin-bottom: 2px;
 }
-
-
-/* Malý popis */
 
 .contact-option small {
-    color: #999;
-
-    font-size: 14px;
+  display: block;
+  color: #999;
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-
-/* Spodní text */
-
-.contact-note {
-    margin: 30px 0 0;
-
-    color: #888;
-
-    font-size: 14px;
-
-    line-height: 1.6;
+.contact-option-arrow {
+  color: #666;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-
-/* ===== MOBIL ===== */
-
-@media (max-width: 600px) {
-
-    .contact-page {
-        padding: 50px 15px;
-    }
-
-    .contact-card {
-        padding: 45px 22px;
-    }
-
-    .contact-card h1 {
-        font-size: 42px;
-    }
-
+.contact-option:hover .contact-option-arrow {
+  color: var(--orange, #ff8a00);
+  transform: translateX(3px);
 }
 
+/* Info panely */
+.contact-panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.contact-panel {
+  padding: 22px 22px 20px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  color: var(--gray, #bdbdbd);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.contact-panel h2 {
+  margin: 0 0 12px;
+  color: var(--white, #fff);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.contact-panel p {
+  margin: 0 0 10px;
+}
+
+.contact-list {
+  margin: 0;
+  padding-left: 1.15em;
+}
+
+.contact-list li {
+  margin-bottom: 8px;
+}
+
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-list strong {
+  color: #eee;
+}
+
+.contact-hint {
+  margin-top: 12px !important;
+  margin-bottom: 0 !important;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.contact-footer-note {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* Toast */
 #contactToast {
-
-    position: fixed;
-
-    left: 50%;
-    bottom: 25px;
-
-    transform:
-        translateX(-50%)
-        translateY(80px);
-
-    background: #222;
-
-    color: white;
-
-    padding: 14px 22px;
-
-    border-radius: 12px;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.4);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease;
-
-    z-index: 9999;
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%) translateY(80px);
+  background: #222;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 138, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
 }
-
 
 #contactToast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
-    opacity: 1;
+@media (max-width: 700px) {
+  .contact-grid,
+  .contact-panels {
+    grid-template-columns: 1fr;
+  }
 
-    transform:
-        translateX(-50%)
-        translateY(0);
+  .contact-page {
+    padding: 36px 16px 60px;
+  }
 }
