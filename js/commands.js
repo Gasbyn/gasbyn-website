@@ -142,6 +142,54 @@ const commands = [
 },
 
 {
+    command: "!setup",
+    category: "stream",
+    description: "Ukáže informace o mém setupu.",
+},
+
+{
+    command: "!gpu",
+    category: "stream",
+    description: "Ukáže, jakou mám grafickou kartu.",
+},
+
+{
+    command: "!cpu",
+    category: "stream",
+    description: "Ukáže, jaký mám procesor.",
+},
+
+{
+    command: "!controller",
+    category: "stream",
+    description: "Ukáže, jaký používám ovladač.",
+},
+
+{
+    command: "!settings",
+    category: "stream",
+    description: "Ukáže nastavení (her / streamu).",
+},
+
+{
+    command: "!mic",
+    category: "stream",
+    description: "Ukáže, jaký mám mikrofon.",
+},
+
+{
+    command: "!mobil",
+    category: "stream",
+    description: "Ukáže informace o mém mobilu.",
+},
+
+{
+    command: "!headset",
+    category: "stream",
+    description: "Ukáže, jaká mám sluchátka.",
+},
+
+{
     command: "********",
     category: "secret",
     description: "🤫 Tento příkaz zůstává tajný.",
@@ -353,4 +401,3 @@ function filterCommands(){
     commandCount.textContent = filtered.length;
 
 }
-
