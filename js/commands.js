@@ -190,6 +190,24 @@ const commands = [
 },
 
 {
+    command: "!keylight",
+    category: "stream",
+    description: "Ukáže info o key light (osvětlení).",
+},
+
+{
+    command: "!monitor",
+    category: "stream",
+    description: "Ukáže, jaký mám monitor.",
+},
+
+{
+    command: "!kamera",
+    category: "stream",
+    description: "Ukáže, jakou mám kameru.",
+},
+
+{
     command: "********",
     category: "secret",
     description: "🤫 Tento příkaz zůstává tajný.",
