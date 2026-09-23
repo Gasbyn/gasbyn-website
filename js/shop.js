@@ -29,8 +29,8 @@ const products = [
 
     {
         name: "TTS na Streamu",
-        description: "AI řekne tvoji zprávu na Streamu (Sprostý/Nevhodný Slova = BAN/Timeout)",
-        status: "Cena: 1000 Granulek",
+        description: "AI řekne tvoji zprávu na Streamu (Sprostý/Nevhodný Slova = BAN)",
+        status: "Cena: 750 Granulek",
         image: "assets/images/TTS.png",
         code: "!tts [Tvoje zpráva]"
     },
