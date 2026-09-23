@@ -16,7 +16,7 @@
         }
         .container {
             width: 100%;
-            max-width: 600px;
+            max-width: 650px;
             background: #181820;
             padding: 25px;
             border-radius: 16px;
@@ -54,6 +54,19 @@
         .pos-2 { color: #c0c0c0; font-weight: bold; }
         .pos-3 { color: #cd7f32; font-weight: bold; }
         .points { text-align: right; font-weight: bold; color: #53fc18; }
+        .platform {
+            font-size: 0.75em;
+            color: #888;
+            margin-left: 6px;
+        }
+        .status {
+            text-align: center;
+            padding: 30px;
+            color: #a0a0b0;
+        }
+        .error {
+            color: #ff6b6b;
+        }
     </style>
 </head>
 <body>
@@ -69,36 +82,62 @@
             </tr>
         </thead>
         <tbody id="leaderboard">
-            <tr><td colspan="3" style="text-align:center;">Načítám žebříček...</td></tr>
+            <tr>
+                <td colspan="3" class="status">Načítám žebříček...</td>
+            </tr>
         </tbody>
     </table>
 </div>
 
 <script>
+    function escapeHtml(text) {
+        if (text == null) return '';
+        return String(text)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
     function loadLeaderboard() {
-        fetch('leaderboard.json?v=' + new Date().getTime())
-            .then(res => res.json())
+        const tbody = document.getElementById('leaderboard');
+
+        fetch('leaderboard.json?v=' + Date.now())
+            .then(res => {
+                if (!res.ok) throw new Error('Soubor leaderboard.json neexistuje nebo není dostupný (' + res.status + ')');
+                return res.json();
+            })
             .then(data => {
-                const tbody = document.getElementById('leaderboard');
                 tbody.innerHTML = '';
-                
+
+                if (!Array.isArray(data) || data.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="3" class="status">Žebříček je zatím prázdný.</td></tr>';
+                    return;
+                }
+
                 data.forEach(player => {
                     let posClass = '';
                     if (player.position === 1) posClass = 'pos-1';
                     else if (player.position === 2) posClass = 'pos-2';
                     else if (player.position === 3) posClass = 'pos-3';
 
+                    const points = Number(player.points) || 0;
+                    const platform = player.platform ? `<span class="platform">(${escapeHtml(player.platform)})</span>` : '';
+
                     const row = `
                         <tr>
                             <td class="${posClass}">#${player.position}</td>
-                            <td class="${posClass}">${player.name}</td>
-                            <td class="points">${player.points.toLocaleString()}</td>
+                            <td class="${posClass}">${escapeHtml(player.name)}${platform}</td>
+                            <td class="points">${points.toLocaleString('cs-CZ')}</td>
                         </tr>
                     `;
                     tbody.innerHTML += row;
                 });
             })
-            .catch(err => console.error('Chyba při načítání dat:', err));
+            .catch(err => {
+                console.error('Chyba při načítání dat:', err);
+                tbody.innerHTML = `<tr><td colspan="3" class="status error">Nepodařilo se načíst žebříček.<br><small>${escapeHtml(err.message)}</small></td></tr>`;
+            });
     }
 
     loadLeaderboard();
