@@ -28,6 +28,14 @@ const products = [
     },
 
     {
+        name: "Vlastní Příkaz",
+        description: "Gasbyn vytvoří tvůj vlastní příkaz",
+        status: "Cena: 5000 Granulek",
+        image: "assets/images/prikaz.png",
+        code: "!prikaz ![SLOVO], [OBSAH], [VEŘEJNOST]"
+    },
+
+    {
         name: "TTS na Streamu",
         description: "AI řekne tvoji zprávu na Streamu (Sprostý/Nevhodný Slova = BAN)",
         status: "Cena: 750 Granulek",
