@@ -35,12 +35,15 @@ a.logo {
   filter: brightness(1.04);
 }
 
-/* COMMANDS + SHOP – BEZ náklonu, jen scale + lift */
+/* COMMANDS + SHOP + OPTIMIZER – BEZ náklonu, jen scale + lift */
 .command-card,
 .product-card,
 .stat,
 .secret-card,
-.shop-info {
+.shop-info,
+.optimizer-card,
+.optimizer-video,
+.optimizer-info {
   transform: none;
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
@@ -56,7 +59,9 @@ a.logo {
 .product-card:hover,
 .stat:hover,
 .secret-card:hover,
-.shop-info:hover {
+.shop-info:hover,
+.optimizer-card:hover,
+.optimizer-video:hover {
   transform: scale(1.04) translateY(-6px) !important;
   filter: brightness(1.04);
 }
@@ -72,7 +77,9 @@ a.logo {
 .copy-product,
 .category,
 .buttons button,
-.tag {
+.tag,
+.optimizer-btn,
+.optimizer-badges span {
   transition:
     transform var(--hover-dur-fast) var(--hover-ease),
     box-shadow var(--hover-dur-fast) ease,
@@ -86,7 +93,9 @@ a.logo {
 .copy-product:hover,
 .category:hover,
 .buttons button:hover,
-.tag:hover {
+.tag:hover,
+.optimizer-btn:hover,
+.optimizer-badges span:hover {
   transform: translateY(-4px) scale(1.07) !important;
 }
 
@@ -191,7 +200,9 @@ a.logo {
 .buttons button:active,
 .card:active,
 .command-card:active,
-.product-card:active {
+.product-card:active,
+.optimizer-card:active,
+.optimizer-btn:active {
   transform: scale(0.96) translateY(0) !important;
   transition-duration: 0.12s !important;
 }
@@ -203,7 +214,8 @@ a.logo {
 .kick-card::after,
 .command-card::after,
 .product-card::after,
-.shop-info::after {
+.shop-info::after,
+.optimizer-card::after {
   content: "";
   position: absolute;
   top: 0;
@@ -226,7 +238,8 @@ a.logo {
 .kick-card:hover::after,
 .command-card:hover::after,
 .product-card:hover::after,
-.shop-info:hover::after {
+.shop-info:hover::after,
+.optimizer-card:hover::after {
   left: 120%;
 }
 
@@ -280,7 +293,8 @@ a.logo {
 .kick-card a,
 .copy,
 .favorite,
-.copy-product {
+.copy-product,
+.optimizer-btn {
   position: relative;
   overflow: hidden;
   z-index: 0;
@@ -292,7 +306,8 @@ a.logo {
 .kick-card a::before,
 .copy::before,
 .favorite::before,
-.copy-product::before {
+.copy-product::before,
+.optimizer-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -315,7 +330,8 @@ a.logo {
 .kick-card a:hover::before,
 .copy:hover::before,
 .favorite:hover::before,
-.copy-product:hover::before {
+.copy-product:hover::before,
+.optimizer-btn:hover::before {
   left: 130%;
 }
 
