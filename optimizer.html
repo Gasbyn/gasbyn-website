@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gasbyn Optimizer 2.0 – program pro optimalizaci Windows s vracením změn, bodem obnovení a automatickými aktualizacemi. Již brzy.">
+<meta name="description" content="Gasbyn Optimizer 2.0 – program pro optimalizaci Windows s vratnými změnami, bodem obnovení a automatickými aktualizacemi. Již brzy.">
 <title>Gasbyn Optimizer | Gasbyn</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/optimizer.css">
@@ -22,7 +22,7 @@
 <a href="domov.html" class="logo">GASBYN</a>
 <ul class="nav-links">
 <li><a href="domov.html">Domov</a></li>
-<li><a href="optimizer.html">Optimizer</a></li>
+<li><a href="optimizer.html" class="nav-active" aria-current="page">Optimizer</a></li>
 <li><a href="shop.html">Kick Shop</a></li>
 <li><a href="commands.html">Kick příkazy</a></li>
 <li><a href="merch.html">Merch</a></li>
@@ -33,14 +33,20 @@
 
 <main class="optimizer-page">
 <section class="optimizer-hero reveal">
-<div class="optimizer-icon">⚡</div>
+<div class="optimizer-icon" aria-hidden="true">⚡</div>
+<p class="optimizer-eyebrow">Windows tool</p>
 <h1>Gasbyn Optimizer 2.0</h1>
 <p class="optimizer-status">Již brzy</p>
 <p class="optimizer-description">Program pro Windows, který zrychlí a uklidí tvůj počítač. Každou úpravu zapneš a vypneš jedním kliknutím a kdykoli ji vrátíš zpět. Žádné skripty, žádné hádání.</p>
 <div class="optimizer-badges">
-<span>Windows 10 &amp; 11</span>
+<span>Windows 10 & 11</span>
 <span>Česky</span>
 <span>Zdarma</span>
+<span>Vratné změny</span>
+</div>
+<div class="optimizer-cta">
+<a class="optimizer-btn optimizer-btn-primary" href="https://github.com/Gasbyn/GasbynOptimizer/releases" target="_blank" rel="noopener">📦 GitHub Releases</a>
+<a class="optimizer-btn optimizer-btn-secondary" href="https://discord.gg/N4TM66Ybgq" target="_blank" rel="noopener">🐛 Hlášení problémů</a>
 </div>
 </section>
 
@@ -59,34 +65,34 @@
 </div>
 </section>
 
-<section class="optimizer-info container reveal">
+<section class="optimizer-info container reveal delay-1">
 <h2>Jak to funguje</h2>
-<ul>
-<li><strong>Nainstaluješ</strong> program pomocí instalátoru (ke stažení až bude hotový).</li>
-<li><strong>Při startu</strong> se krátce zobrazí okno s kontrolou stavu systému a tvého hardwaru.</li>
-<li><strong>Vybereš</strong> optimalizace, nebo klikneš na doporučené, a změny se provedou.</li>
-<li><strong>Kdykoli</strong> každou změnu vrátíš zpět, případně použiješ bod obnovení.</li>
-</ul>
+<ol class="optimizer-steps">
+<li><strong>Nainstaluješ</strong> program z oficiálního GitHub Releases (ke stažení, až bude 2.0 hotové).</li>
+<li><strong>Při startu</strong> se krátce zobrazí kontrola hardwaru, admin práv a případné aktualizace.</li>
+<li><strong>Vybereš</strong> optimalizace, nebo použiješ doporučené, a změny se provedou bezpečně se zálohou.</li>
+<li><strong>Kdykoli</strong> každou změnu vypneš, případně použiješ bod obnovení Windows.</li>
+</ol>
 
 <h2>Dobré vědět</h2>
 <ul>
 <li>Program mění nastavení Windows, proto vyžaduje práva správce.</li>
 <li>Pokročilé a experimentální optimalizace používáš na vlastní riziko. Při prvním spuštění odsouhlasíš podmínky použití.</li>
-<li>Aplikace nesbírá osobní údaje. Na internet sahá jen kvůli kontrole nové verze.</li>
-<li>Máš problém nebo nápad? Napiš nám na <a href="https://discord.gg/VC4xf9DQ7A" target="_blank" rel="noopener">Discord server</a> do <a href="https://discord.gg/N4TM66Ybgq" target="_blank" rel="noopener">chatu pro hlášení problémů</a>.</li>
+<li>Aplikace nesbírá osobní údaje. Na internet sahá jen kvůli kontrole nové verze z GitHubu.</li>
+<li>Máš problém nebo nápad? Napiš na <a href="https://discord.gg/VC4xf9DQ7A" target="_blank" rel="noopener">Discord server</a> do <a href="https://discord.gg/N4TM66Ybgq" target="_blank" rel="noopener">chatu pro hlášení problémů</a>.</li>
 </ul>
 </section>
 
 <section class="container optimizer-section">
-<h2 class="reveal">Video Tutorial</h2>
+<h2 class="reveal">Video tutorial</h2>
 <div class="optimizer-video reveal delay-1">
-<div class="optimizer-video-icon">🎬</div>
+<div class="optimizer-video-icon" aria-hidden="true">🎬</div>
 <h3>Již brzy</h3>
 <p>Krok za krokem ukážu, jak Gasbyn Optimizer nainstalovat a používat. Video přibude spolu s vydáním verze 2.0.</p>
 </div>
 </section>
 
-<section class="optimizer-info container reveal">
+<section class="optimizer-info container reveal delay-2">
 <p class="optimizer-note">Chceš se dozvědět o vydání mezi prvními? Sleduj <a href="https://kick.com/Gasbyn" target="_blank" rel="noopener">Kick</a>, <a href="https://www.youtube.com/@Gasbyn" target="_blank" rel="noopener">YouTube</a> a <a href="https://discord.gg/VC4xf9DQ7A" target="_blank" rel="noopener">Discord</a>. Tuto stránku aktualizuju, jakmile bude Optimizer 2.0 připravený ke stažení.</p>
 </section>
 </main>
