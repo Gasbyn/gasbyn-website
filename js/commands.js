@@ -1,6 +1,23 @@
 // ===== Databáze příkazů =====
 
+const categoryLabels = {
+    community: "Od komunity",
+    social: "Sociální sítě",
+    games: "Hry",
+    stream: "Stream",
+    stats: "Statistiky",
+    support: "Podpora",
+    shop: "Shop",
+    secret: "Secret"
+};
+
 const commands = [
+
+{
+    command: "!špenát",
+    category: "community",
+    description: "Komunitní příkaz od fanoušků.",
+},
 
 {
     command: "!1v1",
@@ -259,6 +276,8 @@ function displayCommands(list){
     card.classList.add("secret-card");
 }
 
+        const tagLabel = categoryLabels[cmd.category] || cmd.category;
+
 
         card.innerHTML = `
 
@@ -275,7 +294,7 @@ function displayCommands(list){
 
         <span class="tag">
 
-        ${cmd.category}
+        ${tagLabel}
 
         </span>
 
