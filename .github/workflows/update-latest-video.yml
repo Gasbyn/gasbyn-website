@@ -28,13 +28,19 @@ jobs:
         run: |
           yt-dlp --flat-playlist --playlist-end 1 --dump-single-json "https://www.youtube.com/@Gasbyn/videos" > /tmp/youtube.json
 
-      - name: Update data.json
+      - name: Update data.json (YouTube + Optimizer setup)
         run: |
           python - <<'PY'
           import json
+          import urllib.request
           from datetime import datetime, timezone
           from pathlib import Path
 
+          now = datetime.now(timezone.utc).isoformat()
+          data_path = Path('data.json')
+          data = json.loads(data_path.read_text(encoding='utf-8'))
+
+          # --- Latest YouTube video ---
           raw = json.loads(Path('/tmp/youtube.json').read_text(encoding='utf-8'))
           entries = raw.get('entries') or []
           if not entries:
@@ -48,14 +54,55 @@ jobs:
           if not video_id:
               raise SystemExit('Latest video ID was not found.')
 
-          data_path = Path('data.json')
-          data = json.loads(data_path.read_text(encoding='utf-8'))
           data.setdefault('youtube', {})['latestVideo'] = {
               'id': video_id,
               'title': title,
               'thumbnail': thumbnail
           }
-          data['youtube']['latestVideoUpdatedAt'] = datetime.now(timezone.utc).isoformat()
+          data['youtube']['latestVideoUpdatedAt'] = now
+
+          # --- Latest Gasbyn Optimizer setup from GitHub Releases ---
+          try:
+              req = urllib.request.Request(
+                  'https://api.github.com/repos/Gasbyn/GasbynOptimizer/releases/latest',
+                  headers={
+                      'Accept': 'application/vnd.github+json',
+                      'User-Agent': 'gasbyn-website-updater'
+                  }
+              )
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  release = json.loads(resp.read().decode('utf-8'))
+
+              tag = release.get('tag_name') or ''
+              html_url = release.get('html_url') or 'https://github.com/Gasbyn/GasbynOptimizer/releases'
+              assets = release.get('assets') or []
+
+              setup = None
+              for a in assets:
+                  name = (a.get('name') or '').lower()
+                  if name.endswith('.exe') and 'setup' in name:
+                      setup = a
+                      break
+              if setup is None:
+                  for a in assets:
+                      name = (a.get('name') or '').lower()
+                      if name.endswith('.exe'):
+                          setup = a
+                          break
+
+              if setup and setup.get('browser_download_url'):
+                  data['optimizer'] = {
+                      'version': tag,
+                      'fileName': setup.get('name') or '',
+                      'downloadUrl': setup['browser_download_url'],
+                      'releaseUrl': html_url,
+                      'updatedAt': now
+                  }
+                  print(f"Optimizer setup -> {tag} / {setup.get('name')}")
+              else:
+                  print('No setup .exe asset found on latest release; keeping previous optimizer data.')
+          except Exception as exc:
+              print(f'Optimizer release fetch failed (kept previous): {exc}')
 
           data_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           PY
@@ -66,8 +113,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json
           if git diff --cached --quiet; then
-            echo "Latest video has not changed."
+            echo "Latest video / optimizer has not changed."
           else
-            git commit -m "chore: update latest YouTube video"
+            git commit -m "chore: update latest YouTube video and Optimizer download"
             git push
           fi
