@@ -122,13 +122,12 @@ async function loadHomeData() {
 }
 
 
-const OPTIMIZER_FALLBACK_URL = "https://github.com/Gasbyn/GasbynOptimizer/releases/latest";
+const OPTIMIZER_FALLBACK_URL =
+    "https://github.com/Gasbyn/GasbynOptimizer/releases/download/v2.0.b1.9/GasbynOptimizer-Setup-2.0.1.9.exe";
 
 async function loadOptimizerDownload() {
     const downloadBtn = document.getElementById("optimizerDownload");
-    const versionEl = document.getElementById("optimizerVersion");
-
-    if (!downloadBtn && !versionEl) {
+    if (!downloadBtn) {
         return;
     }
 
@@ -144,28 +143,13 @@ async function loadOptimizerDownload() {
         const data = await response.json();
         const opt = data.optimizer || {};
 
-        if (downloadBtn && opt.downloadUrl) {
+        if (opt.downloadUrl) {
             downloadBtn.href = opt.downloadUrl;
-            downloadBtn.setAttribute("download", opt.fileName || "");
-        } else if (downloadBtn) {
+        } else {
             downloadBtn.href = OPTIMIZER_FALLBACK_URL;
-        }
-
-        if (versionEl) {
-            if (opt.version) {
-                versionEl.textContent = "Verze " + opt.version +
-                    (opt.fileName ? " · " + opt.fileName : "");
-            } else {
-                versionEl.textContent = "Aktuální verze z GitHub Releases";
-            }
         }
     } catch (error) {
-        if (downloadBtn) {
-            downloadBtn.href = OPTIMIZER_FALLBACK_URL;
-        }
-        if (versionEl) {
-            versionEl.textContent = "Aktuální verze z GitHub Releases";
-        }
+        downloadBtn.href = OPTIMIZER_FALLBACK_URL;
     }
 }
 
