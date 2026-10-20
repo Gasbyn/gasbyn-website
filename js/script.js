@@ -122,8 +122,58 @@ async function loadHomeData() {
 }
 
 
+const OPTIMIZER_FALLBACK_URL = "https://github.com/Gasbyn/GasbynOptimizer/releases/latest";
+
+async function loadOptimizerDownload() {
+    const downloadBtn = document.getElementById("optimizerDownload");
+    const versionEl = document.getElementById("optimizerVersion");
+
+    if (!downloadBtn && !versionEl) {
+        return;
+    }
+
+    try {
+        const response = await fetch("data.json?cache=" + Date.now(), {
+            cache: "no-store"
+        });
+
+        if (!response.ok) {
+            throw new Error("Data unavailable");
+        }
+
+        const data = await response.json();
+        const opt = data.optimizer || {};
+
+        if (downloadBtn && opt.downloadUrl) {
+            downloadBtn.href = opt.downloadUrl;
+            downloadBtn.setAttribute("download", opt.fileName || "");
+        } else if (downloadBtn) {
+            downloadBtn.href = OPTIMIZER_FALLBACK_URL;
+        }
+
+        if (versionEl) {
+            if (opt.version) {
+                versionEl.textContent = "Verze " + opt.version +
+                    (opt.fileName ? " · " + opt.fileName : "");
+            } else {
+                versionEl.textContent = "Aktuální verze z GitHub Releases";
+            }
+        }
+    } catch (error) {
+        if (downloadBtn) {
+            downloadBtn.href = OPTIMIZER_FALLBACK_URL;
+        }
+        if (versionEl) {
+            versionEl.textContent = "Aktuální verze z GitHub Releases";
+        }
+    }
+}
+
+
 loadHomeData();
+loadOptimizerDownload();
 setInterval(loadHomeData, 6 * 60 * 60 * 1000);
+setInterval(loadOptimizerDownload, 6 * 60 * 60 * 1000);
 
 
 document.querySelectorAll(".hero-avatar, .hero-right img").forEach(function (img) {
