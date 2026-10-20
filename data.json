@@ -12,5 +12,12 @@
   "kick": {
     "followers": 900,
     "updatedAt": "2026-10-20T11:30:17.319261+00:00"
+  },
+  "optimizer": {
+    "version": "v2.0.b1.9",
+    "fileName": "GasbynOptimizer-Setup-2.0.1.9.exe",
+    "downloadUrl": "https://github.com/Gasbyn/GasbynOptimizer/releases/download/v2.0.b1.9/GasbynOptimizer-Setup-2.0.1.9.exe",
+    "releaseUrl": "https://github.com/Gasbyn/GasbynOptimizer/releases/tag/v2.0.b1.9",
+    "updatedAt": "2026-10-20T12:30:00.000000+00:00"
   }
 }
