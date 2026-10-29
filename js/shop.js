@@ -4,6 +4,14 @@ const shopGrid = document.getElementById("shopGrid");
 const products = [
 
     {
+        name: "Připomínka na SAC",
+        description: "Gasbyn připomene na Streamu na SAC.",
+        status: "Cena: 100 Granulek",
+        image: "assets/images/SAC.png",
+        code: "!buy SAC"
+    },
+
+    {
         name: "200 V-Bucks Gift",
         description: "Dostaneš od Gasbyna 200 V-Bucks.",
         status: "Cena: NEAKTIVNÍ",
@@ -12,14 +20,14 @@ const products = [
     },
 
     {
-        name: "Challenge na 1 Hru",
-        description: "Vybereš Gasbynovy Challenge na jednu hru. Neplatí pro Cupy a Tournamenty.",
-        status: "Cena: 1000 Granulek",
+        name: "Jedna rarita zbraní",
+        description: "Gasbyn hraje jen s jednou raritou zbraní.",
+        status: "Cena: 250 Granulek",
         image: "assets/images/Challenge.png",
-        code: "!buy challenge"
+        code: "!buy rarita"
     },
 
-   {
+    {
         name: "10 Dřepů na Streamu",
         description: "Gasbyn udělá 10 dřepů na streamu.",
         status: "Cena: 500 Granulek",
@@ -28,11 +36,11 @@ const products = [
     },
 
     {
-        name: "Vlastní Příkaz",
-        description: "Gasbyn vytvoří tvůj vlastní příkaz",
-        status: "Cena: 5000 Granulek",
-        image: "assets/images/prikaz.png",
-        code: "!prikaz ![SLOVO], [OBSAH], [VEŘEJNOST]"
+        name: "Pouze jedna kategorie zbraní",
+        description: "Gasbyn hraje jen s jednou kategorií zbraní.",
+        status: "Cena: 500 Granulek",
+        image: "assets/images/Challenge.png",
+        code: "!buy kategorie"
     },
 
     {
@@ -44,11 +52,35 @@ const products = [
     },
 
     {
-        name: "Připomínka na SAC",
-        description: "Gasbyn připomene na Streamu na SAC.",
-        status: "Cena: 100 Granulek",
-        image: "assets/images/SAC.png",
-        code: "!buy SAC"
+        name: "Pouze krumpáč",
+        description: "Gasbyn hraje jen s krumpáčem.",
+        status: "Cena: 1 000 Granulek",
+        image: "assets/images/Challenge.png",
+        code: "!buy krumpac"
+    },
+
+    {
+        name: "Klávesnice a myš místo ovladače",
+        description: "Gasbyn hraje na klávesnici a myši místo ovladače.",
+        status: "Cena: 1 500 Granulek",
+        image: "assets/images/Challenge.png",
+        code: "!buy knm"
+    },
+
+    {
+        name: "Challenge na 1 Hru",
+        description: "Vybereš Gasbynovy Challenge na jednu hru. Neplatí pro Cupy a Tournamenty.",
+        status: "Cena: 1 000 Granulek",
+        image: "assets/images/Challenge.png",
+        code: "!buy challenge"
+    },
+
+    {
+        name: "Vlastní Příkaz",
+        description: "Gasbyn vytvoří tvůj vlastní příkaz",
+        status: "Cena: 5 000 Granulek",
+        image: "assets/images/prikaz.png",
+        code: "!prikaz ![SLOVO], [OBSAH], [VEŘEJNOST]"
     }
 
 ];
