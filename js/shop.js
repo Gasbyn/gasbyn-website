@@ -68,14 +68,6 @@ const products = [
     },
 
     {
-        name: "Challenge na 1 Hru",
-        description: "Vybereš Gasbynovy Challenge na jednu hru. Neplatí pro Cupy a Tournamenty.",
-        status: "Cena: 1 000 Granulek",
-        image: "assets/images/Challenge.png",
-        code: "!buy challenge"
-    },
-
-    {
         name: "Vlastní Příkaz",
         description: "Gasbyn vytvoří tvůj vlastní příkaz",
         status: "Cena: 5 000 Granulek",
