@@ -4,19 +4,19 @@ const shopGrid = document.getElementById("shopGrid");
 const products = [
 
     {
-        name: "Připomínka na SAC",
-        description: "Gasbyn připomene na Streamu na SAC.",
-        status: "Cena: 100 Granulek",
-        image: "assets/images/SAC.png",
-        code: "!buy SAC"
-    },
-
-    {
         name: "200 V-Bucks Gift",
         description: "Dostaneš od Gasbyna 200 V-Bucks.",
         status: "Cena: NEAKTIVNÍ",
         image: "assets/images/200-Vbucks.png",
         code: "!buy 200vbucks"
+    },
+    
+    {
+        name: "Připomínka na SAC",
+        description: "Gasbyn připomene na Streamu na SAC.",
+        status: "Cena: 100 Granulek",
+        image: "assets/images/SAC.png",
+        code: "!buy SAC"
     },
 
     {
