@@ -23,7 +23,7 @@ const products = [
         name: "Jedna rarita zbraní",
         description: "Gasbyn hraje jen s jednou raritou zbraní",
         status: "Cena: 250 Granulek",
-        image: "assets/images/Challenge.png",
+        image: "assets/images/rarita.png",
         code: "!buy rarita [Sem dej tvoji Raritu]"
     },
 
@@ -39,7 +39,7 @@ const products = [
         name: "Pouze jedna kategorie zbraní",
         description: "Gasbyn hraje jen s jednou kategorií zbraní",
         status: "Cena: 500 Granulek",
-        image: "assets/images/Challenge.png",
+        image: "assets/images/kategorie.png",
         code: "!buy kategorie [Sem dej tvoji Kategorii]"
     },
 
@@ -55,7 +55,7 @@ const products = [
         name: "Pouze krumpáč",
         description: "Gasbyn hraje jen s krumpáčem",
         status: "Cena: 1 000 Granulek",
-        image: "assets/images/Challenge.png",
+        image: "assets/images/pickaxe.png",
         code: "!buy pickaxe"
     },
 
@@ -63,7 +63,7 @@ const products = [
         name: "Klávesnice a myš místo ovladače",
         description: "Gasbyn hraje na klávesnici a myši místo ovladače",
         status: "Cena: 1 500 Granulek",
-        image: "assets/images/Challenge.png",
+        image: "assets/images/kbm.png",
         code: "!buy kbm"
     },
 
