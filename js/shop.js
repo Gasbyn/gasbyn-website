@@ -23,7 +23,7 @@ const products = [
         name: "Jedna rarita zbraní",
         description: "Gasbyn hraje jen s jednou raritou zbraní",
         status: "Cena: 250 Granulek",
-        image: "assets/images/rarita.png",
+        image: "assets/images/Rarita.png",
         code: "!buy rarita [Sem dej tvoji Raritu]"
     },
 
