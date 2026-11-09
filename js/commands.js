@@ -20,6 +20,24 @@ const commands = [
 },
 
 {
+    command: "!Gasbyn",
+    category: "community",
+    description: "Info o životě – komunitní příkaz od fanoušků.",
+},
+
+{
+    command: "!mango",
+    category: "community",
+    description: "Komunitní příkaz od fanoušků.",
+},
+
+{
+    command: "!potkan",
+    category: "community",
+    description: "Komunitní příkaz od fanoušků.",
+},
+
+{
     command: "!1v1",
     category: "games",
     description: "Pošle hráči kód na moji 1v1 mapu.",
@@ -156,6 +174,18 @@ const commands = [
     command: "!soutěž",
     category: "stream",
     description: "Ukáže informace o soutěži.",
+},
+
+{
+    command: "!music",
+    category: "stream",
+    description: "Ukáže, jaká hudba právě hraje na streamu.",
+},
+
+{
+    command: "!optimizer",
+    category: "stream",
+    description: "Pošle odkaz na Gasbyn Optimizer ke stažení.",
 },
 
 {
