@@ -20,9 +20,9 @@ const commands = [
 },
 
 {
-    command: "!Gasbyn",
+    command: "!gasbyninfooživotě",
     category: "community",
-    description: "Info o životě – komunitní příkaz od fanoušků.",
+    description: "Komunitní příkaz.",
 },
 
 {
