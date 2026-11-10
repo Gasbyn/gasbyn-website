@@ -5,10 +5,10 @@ const products = [
 
     {
         name: "200 V-Bucks Gift",
-        description: "Dostaneš od Gasbyna 200 V-Bucks Gift",
-        status: "Cena: NEAKTIVNÍ",
+        description: "Dostaneš od Gasbyna 200 V-Bucks Gift ve Fortnite Shop",
+        status: "Cena: 30000",
         image: "assets/images/200-Vbucks.png",
-        code: "!buy 200vbucks"
+        code: "!buy 200vb"
     },
     
     {
