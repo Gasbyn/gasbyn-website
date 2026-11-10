@@ -6,7 +6,7 @@ const products = [
     {
         name: "200 V-Bucks Gift",
         description: "Dostaneš od Gasbyna 200 V-Bucks Gift ve Fortnite Shop",
-        status: "Cena: 30000",
+        status: "Cena: 30000 Granulek",
         image: "assets/images/200-Vbucks.png",
         code: "!buy 200vb"
     },
