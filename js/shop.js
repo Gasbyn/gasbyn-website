@@ -22,7 +22,7 @@ const products = [
     {
         name: "Jedna rarita zbraní",
         description: "Gasbyn hraje jen s jednou raritou zbraní",
-        status: "Cena: 250 Granulek",
+        status: "Cena: 300 Granulek",
         image: "assets/images/Rarita.png",
         code: "!buy rarita [Sem dej tvoji Raritu]"
     },
@@ -30,7 +30,7 @@ const products = [
     {
         name: "10 Dřepů na Streamu",
         description: "Gasbyn udělá 10 dřepů na Streamu",
-        status: "Cena: 500 Granulek",
+        status: "Cena: 625 Granulek",
         image: "assets/images/10drepu.png",
         code: "!buy 10drepu"
     },
