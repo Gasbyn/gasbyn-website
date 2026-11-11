@@ -52,6 +52,14 @@ const products = [
     },
 
     {
+        name: "Mimoň / čipmánek hlas",
+        description: "Gasbyn bude mluvit jak čipmánek / Mimoň",
+        status: "Cena: dle streamu",
+        image: "assets/images/mimon.png",
+        code: "!buy mimon"
+    },
+
+    {
         name: "Pouze krumpáč",
         description: "Gasbyn hraje jen s krumpáčem",
         status: "Cena: 1 000 Granulek",
