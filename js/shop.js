@@ -54,7 +54,7 @@ const products = [
     {
         name: "Mimoň / čipmánek hlas",
         description: "Gasbyn bude mluvit jak čipmánek / Mimoň",
-        status: "1000 Granulek",
+        status: "Cena: 1000 Granulek",
         image: "assets/images/mimon.png",
         code: "!buy mimon"
     },
