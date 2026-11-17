@@ -16,25 +16,37 @@ const commands = [
 {
     command: "!špenát",
     category: "community",
-    description: "Komunitní příkaz od fanoušků.",
+    description: "Příkaz vytvořený komunitou.",
 },
 
 {
     command: "!gasbyninfooživotě",
     category: "community",
-    description: "Komunitní příkaz.",
+    description: "Příkaz vytvořený komunitou.",
 },
 
 {
     command: "!mango",
     category: "community",
-    description: "Komunitní příkaz od fanoušků.",
+    description: "Příkaz vytvořený komunitou.",
 },
 
 {
     command: "!potkan",
     category: "community",
-    description: "Komunitní příkaz od fanoušků.",
+    description: "Příkaz vytvořený komunitou.",
+},
+
+{
+    command: "!gasbyn",
+    category: "community",
+    description: "Příkaz vytvořený komunitou.",
+},
+
+{
+    command: "!brex",
+    category: "community",
+    description: "Příkaz vytvořený komunitou.",
 },
 
 {
