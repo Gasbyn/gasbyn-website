@@ -7,17 +7,17 @@
       "thumbnail": "https://i.ytimg.com/vi/eNty4C4Xt3Q/maxresdefault.jpg"
     },
     "updatedAt": "2026-11-21T19:09:18.884322+00:00",
-    "latestVideoUpdatedAt": "2026-11-21T13:57:17.858667+00:00"
+    "latestVideoUpdatedAt": "2026-11-21T22:38:30.223904+00:00"
   },
   "kick": {
     "followers": 992,
     "updatedAt": "2026-11-21T19:09:18.884322+00:00"
   },
   "optimizer": {
-    "version": "v2.0.0.202",
-    "fileName": "GasbynOptimizer-Setup-2.0.0.202.exe",
-    "downloadUrl": "https://github.com/Gasbyn/GasbynOptimizer/releases/download/v2.0.0.202/GasbynOptimizer-Setup-2.0.0.202.exe",
-    "releaseUrl": "https://github.com/Gasbyn/GasbynOptimizer/releases/tag/v2.0.0.202",
-    "updatedAt": "2026-11-21T04:58:11.525081+00:00"
+    "version": "v2.0.0.211",
+    "fileName": "GasbynOptimizer-Setup-2.0.0.211.exe",
+    "downloadUrl": "https://github.com/Gasbyn/GasbynOptimizer/releases/download/v2.0.0.211/GasbynOptimizer-Setup-2.0.0.211.exe",
+    "releaseUrl": "https://github.com/Gasbyn/GasbynOptimizer/releases/tag/v2.0.0.211",
+    "updatedAt": "2026-11-21T22:38:30.223904+00:00"
   }
 }
