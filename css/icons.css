@@ -1,0 +1,82 @@
+/* Custom brand + UI icons (SVG instead of system emoji) */
+
+.icon,
+.brand-icon {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+  flex-shrink: 0;
+}
+
+.icon-lg {
+  width: 1.35em;
+  height: 1.35em;
+}
+
+.icon-xl {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-hero {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-heading {
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.2em;
+  vertical-align: -0.05em;
+}
+
+.hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-btn-youtube { background: #ff0000 !important; }
+.hero-btn-kick { background: #53FC18 !important; color: #0a0a0a !important; }
+.hero-btn-discord { background: #5865F2 !important; }
+.hero-btn-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+}
+
+.contact-option-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-option-icon.icon-brand-discord { background: rgba(88, 101, 242, 0.18); color: #7289da; }
+.contact-option-icon.icon-brand-instagram { background: rgba(225, 48, 108, 0.15); color: #e1306c; }
+.contact-option-icon.icon-brand-email { background: rgba(255, 140, 0, 0.12); color: #ff8a00; }
+.contact-option-icon.icon-brand-tiktok { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+.optimizer-icon svg {
+  width: 64px;
+  height: 64px;
+  color: #ff8a00;
+}
+
+.optimizer-video-icon svg {
+  width: 56px;
+  height: 56px;
+  color: #ff8a00;
+}
+
+.card-icon svg,
+.stat-card-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--orange, #ff8a00);
+}
+
+.shop-hero h1 svg,
+.commands-hero h1 svg {
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: -0.12em;
+  margin-right: 0.15em;
+}
