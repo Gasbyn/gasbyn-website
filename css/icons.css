@@ -1,21 +1,22 @@
-/* Custom brand + UI icons (SVG instead of system emoji) */
+/* Polished brand + UI icons */
 
 .icon,
-.brand-icon {
-  display: inline-block;
-  width: 1.15em;
-  height: 1.15em;
-  vertical-align: -0.2em;
-  flex-shrink: 0;
-}
-
-.btn-icon {
+.brand-icon,
+.section-ico {
   display: inline-block;
   width: 1.05em;
   height: 1.05em;
-  vertical-align: -0.18em;
-  margin-right: 0.25em;
+  vertical-align: -0.16em;
+  margin-right: 0.18em;
   flex-shrink: 0;
+}
+
+img.btn-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  display: block;
+  vertical-align: middle;
 }
 
 .copy-product,
@@ -24,83 +25,116 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-}
-
-.icon-lg {
-  width: 1.35em;
-  height: 1.35em;
-}
-
-.icon-xl {
-  width: 48px;
-  height: 48px;
-}
-
-.icon-hero {
-  width: 22px;
-  height: 22px;
-}
-
-.icon-heading {
-  width: 0.85em;
-  height: 0.85em;
-  margin-right: 0.2em;
-  vertical-align: -0.05em;
+  gap: 8px;
 }
 
 .hero-buttons a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  background: #161616 !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 22px !important;
 }
 
-.hero-btn-youtube { background: #ff0000 !important; }
-.hero-btn-kick { background: #53FC18 !important; color: #0a0a0a !important; }
-.hero-btn-discord { background: #5865F2 !important; }
-.hero-btn-instagram {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+.hero-buttons a img {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
-.contact-option-icon svg {
-  width: 26px;
-  height: 26px;
+.hero-buttons a.hero-btn-youtube:hover {
+  border-color: #ff3355 !important;
+  box-shadow: 0 14px 32px rgba(255, 0, 51, 0.28) !important;
+}
+.hero-buttons a.hero-btn-kick:hover {
+  border-color: #53FC18 !important;
+  box-shadow: 0 14px 32px rgba(83, 252, 24, 0.22) !important;
+}
+.hero-buttons a.hero-btn-discord:hover {
+  border-color: #5865F2 !important;
+  box-shadow: 0 14px 32px rgba(88, 101, 242, 0.32) !important;
+}
+.hero-buttons a.hero-btn-instagram:hover {
+  border-color: #e1306c !important;
+  box-shadow: 0 14px 32px rgba(225, 48, 108, 0.28) !important;
 }
 
-.contact-option-icon.icon-brand-discord { background: rgba(88, 101, 242, 0.18); color: #7289da; }
-.contact-option-icon.icon-brand-instagram { background: rgba(225, 48, 108, 0.15); color: #e1306c; }
-.contact-option-icon.icon-brand-email { background: rgba(255, 140, 0, 0.12); color: #ff8a00; }
-.contact-option-icon.icon-brand-tiktok { background: rgba(255, 255, 255, 0.08); color: #fff; }
-
-.optimizer-icon svg {
-  width: 64px;
-  height: 64px;
-  color: #ff8a00;
+.contact-option-icon {
+  background: #111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.optimizer-video-icon svg {
-  width: 56px;
-  height: 56px;
-  color: #ff8a00;
+.contact-option-icon img {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
-.card-icon svg,
-.stat-card-icon svg {
+.optimizer-icon,
+.optimizer-video-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.optimizer-icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 8px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 210, 120, 0.28), transparent 58%),
+    linear-gradient(165deg, #2a1c0c, #14110d);
+  border: 1px solid rgba(255, 156, 40, 0.38);
+  box-shadow: 0 14px 34px rgba(255, 140, 0, 0.16);
+}
+
+.optimizer-icon img {
+  width: 52px;
+  height: 52px;
+}
+
+.optimizer-video-icon img {
+  width: 52px;
+  height: 52px;
+}
+
+.stat-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+}
+
+.stat-card-icon img {
   width: 40px;
   height: 40px;
-  color: var(--orange, #ff8a00);
 }
 
-.shop-hero h1 svg,
-.commands-hero h1 svg {
-  width: 0.9em;
-  height: 0.9em;
+.shop-hero h1 img,
+.commands-hero h1 img {
+  width: 0.85em;
+  height: 0.85em;
   vertical-align: -0.12em;
   margin-right: 0.15em;
 }
 
-.merch-icon svg {
-  width: 56px;
-  height: 56px;
-  color: var(--orange, #ff8a00);
+.shop-info-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.shop-info-title img {
+  width: 20px;
+  height: 20px;
+}
+
+.merch-icon img {
+  width: 54px;
+  height: 54px;
+  display: block;
 }
