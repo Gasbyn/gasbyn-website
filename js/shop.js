@@ -1,5 +1,6 @@
 const shopGrid = document.getElementById("shopGrid");
 
+const COPY_ICON = '<svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 18H8V7h11v16z"/></svg>';
 
 const products = [
 
@@ -102,8 +103,9 @@ function displayProducts() {
                 <p>${product.description}</p>
                 <div class="product-command">Příkaz: ${product.code}</div>
                 <button class="copy-product" data-code="${product.code}">
-                    📋 Zkopírovat Příkaz
+                    ${COPY_ICON} Zkopírovat příkaz
                 </button>
+            </div>
         `;
 
         shopGrid.appendChild(card);
@@ -120,7 +122,11 @@ document.addEventListener("click", async (event) => {
 
     try {
         await navigator.clipboard.writeText(code);
-        showShopToast("Příkaz zkopírován! 📋");
+        showShopToast("Příkaz zkopírován");
+        button.innerHTML = "✓ Zkopírováno";
+        setTimeout(() => {
+            button.innerHTML = COPY_ICON + " Zkopírovat příkaz";
+        }, 2000);
     } catch (error) {
         console.error("Nepodařilo se zkopírovat:", error);
     }
