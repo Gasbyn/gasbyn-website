@@ -9,6 +9,24 @@
   flex-shrink: 0;
 }
 
+.btn-icon {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: -0.18em;
+  margin-right: 0.25em;
+  flex-shrink: 0;
+}
+
+.copy-product,
+.buttons button.copy,
+.buttons button.favorite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 .icon-lg {
   width: 1.35em;
   height: 1.35em;
@@ -79,4 +97,10 @@
   height: 0.9em;
   vertical-align: -0.12em;
   margin-right: 0.15em;
+}
+
+.merch-icon svg {
+  width: 56px;
+  height: 56px;
+  color: var(--orange, #ff8a00);
 }
