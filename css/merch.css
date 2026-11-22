@@ -36,8 +36,28 @@
 }
 
 .merch-icon {
-  font-size: 64px;
-  margin-bottom: 15px;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 18px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(255, 196, 110, 0.28), transparent 58%),
+    linear-gradient(165deg, #2c1c0c, #16110c);
+  border: 1px solid rgba(255, 156, 40, 0.4);
+  box-shadow:
+    0 14px 34px rgba(255, 140, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.merch-icon svg {
+  width: 52px;
+  height: 52px;
+  display: block;
+  color: #ff9a1f;
+  filter: drop-shadow(0 8px 10px rgba(255, 120, 0, 0.28));
 }
 
 .merch-hero h1 {
