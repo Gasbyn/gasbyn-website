@@ -11,12 +11,19 @@
   flex-shrink: 0;
 }
 
-img.btn-icon {
-  width: 16px;
-  height: 16px;
+img.btn-icon,
+.copy-product img,
+.buttons button img {
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px !important;
+  max-height: 15px !important;
+  flex: 0 0 15px;
   margin: 0;
   display: block;
-  vertical-align: middle;
+  object-fit: contain;
 }
 
 .copy-product,
@@ -26,6 +33,15 @@ img.btn-icon {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  min-height: 0;
+}
+
+.buttons button.copy,
+.buttons button.favorite {
+  flex: 1 1 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .hero-buttons a {
