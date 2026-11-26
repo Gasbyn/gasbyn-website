@@ -1,17 +1,17 @@
 {
   "youtube": {
-    "subscribers": 2370,
+    "subscribers": 2380,
     "latestVideo": {
       "id": "eNty4C4Xt3Q",
       "title": "Vyhrál jsem Fortnite JEN s šedýma zbraněma!🔥",
       "thumbnail": "https://i.ytimg.com/vi/eNty4C4Xt3Q/maxresdefault.jpg"
     },
-    "updatedAt": "2026-11-26T08:08:35.952890+00:00",
+    "updatedAt": "2026-11-26T21:26:29.240975+00:00",
     "latestVideoUpdatedAt": "2026-11-26T16:05:57.038694+00:00"
   },
   "kick": {
     "followers": 1000,
-    "updatedAt": "2026-11-26T08:08:35.952890+00:00"
+    "updatedAt": "2026-11-26T21:26:29.240975+00:00"
   },
   "optimizer": {
     "version": "v2.0.0.214",
