@@ -15,7 +15,7 @@ const products = [
     {
         name: "Dostaneš Suba v chatu",
         description: "Gasbyn ti daruje Suba přímo na streamu (můžeš vybrat, jestli sobě, nebo někomu jinému)",
-        status: "Cena: 17 000 Granulek",
+        status: "Cena: 17 500 Granulek",
         image: "assets/images/sub.png",
         code: "!buy sub"
     },
