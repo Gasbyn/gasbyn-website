@@ -11,6 +11,14 @@ const products = [
         image: "assets/images/200-Vbucks.png",
         code: "!buy 200vb"
     },
+
+    {
+        name: "Dostaneš Suba v chatu",
+        description: "Gasbyn ti daruje Suba přímo na streamu (můžeš vybrat, jestli sobě, nebo někomu jinému)",
+        status: "Cena: 17 000 Granulek",
+        image: "assets/images/sub.png",
+        code: "!buy sub"
+    },
     
     {
         name: "Připomínka na SAC",
