@@ -7,7 +7,7 @@ const products = [
     {
         name: "200 V-Bucks Gift",
         description: "Dostaneš od Gasbyna 200 V-Bucks Gift ve Fortnite Shop",
-        status: "Cena: 30000 Granulek",
+        status: "Cena: 30 000 Granulek",
         image: "assets/images/200-Vbucks.png",
         code: "!buy 200vb"
     },
@@ -63,7 +63,7 @@ const products = [
     {
         name: "Mimoň / čipmánek hlas",
         description: "Gasbyn bude mluvit jak čipmánek / Mimoň (na 1 minutu)",
-        status: "Cena: 1250 Granulek",
+        status: "Cena: 1 250 Granulek",
         image: "assets/images/mimon.png",
         code: "!buy mimon"
     },
